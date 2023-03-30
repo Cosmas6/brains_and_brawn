@@ -1,0 +1,89 @@
+.tickets {
+  font-family: "Outfit", sans-serif;
+  color: #1f2937;
+}
+
+.ticketsTitle {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.ticketsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f3f4f6;
+  }
+}
+
+.textRight {
+  text-align: right;
+}
+
+.decreaseButton {
+  background-color: #1ba89f;
+  margin-right: 10px;
+  border: none;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%; /* Make the button circular */
+  cursor: pointer;
+  user-select: none; /* Prevent text selection on button */
+
+  span {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+  }
+}
+
+.increaseButton {
+  background-color: #1ba89f;
+  margin-left: 10px;
+  border: none;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%; /* Make the button circular */
+  cursor: pointer;
+  user-select: none; /* Prevent text selection on button */
+  span {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+  }
+}
+
+.input {
+  font-size: 16px;
+  padding: 2px;
+  border: 1px solid #ccc;
+  box-sizing: content-box;
+  text-align: center;
+  width:20%;
+}
+
+.purchaseBtn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+
+  span {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+  }
+}

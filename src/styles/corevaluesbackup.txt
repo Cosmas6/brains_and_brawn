@@ -1,0 +1,362 @@
+
+
+
+.coreContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 150vh;
+  border: 2px solid;
+  overflow: hidden;
+}
+
+.coreHeading {
+  position: absolute;
+  top: 0;
+  margin: 50px auto;
+  h1 {
+    font-size: 4vw;
+    color: #f45965;
+    font-weight: 700;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-image: url(/images/coreImageBckgrnd.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  flex-basis: 50%;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.headingTopLeft {
+  position: absolute;
+  top: 300px;
+  left: 0;
+  width: 30%;
+  margin-left: 30px;
+  text-align: left;
+
+  h1 {
+    color: #bd7c04;
+    font-weight: 700;
+    font-size: 4vw;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 50px;
+  }
+}
+
+.headingBottomLeft {
+  position: absolute;
+  bottom: 300px;
+  left: 0;
+  width: 30%;
+  margin-left: 30px;
+  text-align: left;
+
+  h1 {
+    color: #5774a8;
+    font-weight: 700;
+    font-size: 4vw;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 50px;
+  }
+}
+
+.headingTopRight {
+  position: absolute;
+  top: 300px;
+  right: 0;
+  width: 25%;
+  margin-right: 30px;
+  text-align: right;
+
+  h1 {
+    color: #499d94;
+    font-weight: 700;
+    font-size: 4vw;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 50px;
+  }
+}
+
+.headingBottomRight {
+  position: absolute;
+  bottom: 300px;
+  right: 0;
+  width: 30%;
+  margin-right: 30px;
+  text-align: right;
+
+  h1 {
+    color: #f45965;
+    font-weight: 700;
+    font-size: 4vw;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 50px;
+  }
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 640px) {
+  .coreHeading {
+    h1 {
+      margin-top: 70px;
+      font-size: 10vw;
+    }
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (min-width: 641px) and (max-width: 767px) {
+  .coreContainer {
+    position: static;
+    display: block;
+  }
+
+  .coreHeading {
+    position: static;
+    margin: 10px auto;
+    h1 {
+      font-size: 8vw;
+      text-align: center;
+    }
+  }
+
+  .imageContainer {
+    margin: 0 20px;
+    max-width: 800px;
+
+    img {
+      max-width: 50%;
+      height: auto;
+    }
+  }
+
+  .headingBottomLeft,
+  .headingBottomRight,
+  .headingTopLeft,
+  .headingTopRight {
+    position: static;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      font-size: 30px;
+    }
+  }
+
+  .headingTopRight,
+  .headingBottomRight {
+    text-align: left;
+  }
+}
+
+/* Tablet Portrait */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .coreContainer {
+    min-height: 180vh;
+  }
+  .coreHeading {
+    h1 {
+      margin-top: 70px;
+      font-size: 8vw;
+    }
+  }
+
+  .imageContainer {
+    margin: 0 20px;
+    max-width: 1000px;
+
+    img {
+      max-width: 160%;
+      height: auto;
+    }
+  }
+
+  .headingTopRight {
+    width: 40%;
+  }
+
+  .headingBottomRight {
+    width: 40%;
+  }
+
+  .headingTopLeft,
+  .headingTopRight {
+    top: 300px;
+  }
+
+  .headingBottomLeft,
+  .headingBottomRight {
+    bottom: 300px;
+  }
+
+  .headingBottomLeft,
+  .headingBottomRight,
+  .headingTopLeft,
+  .headingTopRight {
+    p {
+      font-size: 30px;
+    }
+  }
+
+  .headingTopLeft,
+  .headingBottomLeft {
+    margin-left: 70px;
+  }
+
+  .headingTopRight,
+  .headingBottomRight {
+    margin-right: 70px;
+  }
+
+  .headingBottomRight {
+    width: 40%;
+  }
+}
+
+/* Tablet Landscape */
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+  .coreContainer {
+    min-height: 200vh;
+  }
+  .coreHeading {
+    h1 {
+      font-size: 6vw;
+    }
+  }
+  .imageContainer {
+    max-width: 450px;
+  }
+
+  .headingTopRight {
+    width: 40%;
+  }
+
+  .headingBottomRight {
+    width: 40%;
+  }
+
+  .headingTopLeft,
+  .headingTopRight {
+    top: 200px;
+  }
+
+  .headingBottomLeft,
+  .headingBottomRight {
+    bottom: 200px;
+  }
+
+  .headingBottomLeft,
+  .headingBottomRight,
+  .headingTopLeft,
+  .headingTopRight {
+    p {
+      font-size: 30px;
+    }
+  }
+
+  .headingTopLeft,
+  .headingBottomLeft {
+    margin-left: 50px;
+  }
+
+  .headingTopRight,
+  .headingBottomRight {
+    margin-right: 50px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) and (max-width: 1680px) {
+  .imageContainer {
+    max-width: 600px;
+  }
+
+  .headingTopLeft,
+  .headingTopRight {
+    top: 200px;
+  }
+
+  .headingBottomLeft,
+  .headingBottomRight {
+    bottom: 200px;
+  }
+
+  .headingBottomLeft,
+  .headingBottomRight,
+  .headingTopLeft,
+  .headingTopRight {
+    p {
+      font-size: 30px;
+    }
+  }
+
+  .headingTopLeft,
+  .headingBottomLeft {
+    margin-left: 70px;
+  }
+
+  .headingTopRight,
+  .headingBottomRight {
+    margin-right: 70px;
+  }
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1681px) {
+  .headingBottomLeft,
+  .headingBottomRight,
+  .headingTopLeft,
+  .headingTopRight {
+    p {
+      font-size: 30px;
+    }
+  }
+
+  .headingTopLeft,
+  .headingBottomLeft {
+    margin-left: 100px;
+  }
+
+  .headingTopRight,
+  .headingBottomRight {
+    margin-right: 100px;
+  }
+}

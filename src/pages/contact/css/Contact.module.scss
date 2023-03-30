@@ -1,0 +1,147 @@
+@import "../../../styles//font.scss";
+
+// .contactSection {
+//   padding: 2rem 0;
+// }
+
+.heroBackground {
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  position: relative;
+  height: 35vh;
+  background: url(/images/contactHero.jpg);
+  background-size: cover;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  z-index: 1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d0d0d;
+    opacity: 0.4;
+    z-index: -1;
+  }
+
+  h2 {
+    font-size: 5rem;
+    margin-bottom: 5rem;
+    margin-left: 5rem;
+    color: #f59c0f;
+    @include montserrat-bold;
+  }
+}
+
+.leftColumn {
+  padding-left: 50px; /* Adjust this value to control the gap between columns */
+  padding-right: 50px;
+}
+
+.contactForm {
+  p {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    @include montserrat-light;
+  }
+}
+
+.inputField {
+  position: relative;
+  margin-bottom: 3.5rem;
+  @include montserrat-light;
+
+  .formControl {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #000;
+    width: 80%;
+    outline: none;
+    padding: 0;
+    &:focus {
+      border-color: #007bff;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #000;
+    }
+  }
+
+  .formControlMessage {
+    white-space: pre-wrap;
+  }
+}
+
+.sendButton {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 1rem 11rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.socialMediaSection {
+  background-color: black;
+  margin-top: -100px;
+  z-index: 5;
+}
+
+.socialMedia {
+  position: relative;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: inherit;
+  margin-top: 3rem;
+  margin-left: 3rem;
+
+  h2 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: white;
+    @include montserrat-bold;
+  }
+}
+
+.socialMediaItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  .icon {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    width: 80px;
+  }
+
+  .socialMediaText {
+    margin-left: 1rem;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: white;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .socialMedia {
+    padding-top: 2rem;
+  }
+}

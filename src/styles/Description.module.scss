@@ -1,0 +1,154 @@
+@import "./font.scss";
+
+@font-face {
+  font-family: "Kalam-Bold";
+  src: url("/fonts/Kalam-Bold.ttf") format("truetype");
+}
+
+.descriptionContainer {
+  position: relative;
+}
+
+.containerRow {
+  padding-top: 50px;
+  --bs-gutter-x: 0;
+}
+
+.leftColumn {
+  position: relative;
+  z-index: 1;
+  h1 {
+    position: relative;
+    font-weight: 700;
+    font-size: 4vw;
+    color: #104d46;
+    margin: 30px 30px;
+    @include montserrat-light;
+  }
+
+  p {
+    margin: 30px 30px;
+    font-weight: 600;
+    font-size: 50px;
+    text-align: left;
+    color: #072421;
+    @include montserrat-extra-light;
+  }
+}
+
+.descImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 50px auto;
+}
+
+.descriptionImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 640px) {
+  .containerRow {
+    flex-direction: column-reverse;
+  }
+  .leftColumn {
+    h1 {
+      font-size: 7vw;
+      
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (min-width: 641px) and (max-width: 767px) {
+  .containerRow {
+    flex-direction: column-reverse;
+  }
+
+  .leftColumn {
+    h1 {
+      font-size: 6vw;
+      margin: 0 50px;
+    }
+    p {
+      font-size: 30px;
+      margin: 50px 50px;
+    }
+  }
+}
+
+/* Tablet Portrait */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .containerRow {
+    flex-direction: column-reverse;
+  }
+
+  .leftColumn {
+    h1 {
+      font-size: 6vw;
+      margin: 0 70px;
+    }
+    p {
+      font-size: 30px;
+      margin: 70px 70px;
+    }
+  }
+}
+
+/* Tablet Landscape */
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+  .leftColumn {
+    h1 {
+      font-size: 5vw;
+      margin: 0 50px;
+    }
+    p {
+      font-size: 30px;
+      margin: 50px 50px;
+    }
+  }
+
+  .descImageContainer {
+    width: 90%;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) and (max-width: 1680px) {
+  .leftColumn {
+    h1 {
+      margin: 0 70px;
+    }
+
+    p {
+      margin: 70px 70px;
+      font-size: 30px;
+    }
+  }
+  .descImageContainer {
+    width: 90%;
+  }
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1681px) {
+  .leftColumn {
+    h1 {
+      margin: 0 100px;
+    }
+    p {
+      font-size: 30px;
+      margin: 100px 100px;
+    }
+  }
+  .descImageContainer {
+    width: 80%;
+  }
+}
