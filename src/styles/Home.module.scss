@@ -22,7 +22,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0d0d0d;
+    background-color: #083208;
     opacity: 0.5;
     z-index: -1;
   }
@@ -37,7 +37,7 @@
 .heading {
   text-align: center;
   margin-top: 10px;
-  font-size: 4vw;
+  font-size: 4rem;
   color: #ffffff;
   font-weight: 700;
   @include montserrat-extra-bold;
@@ -46,7 +46,7 @@
 .subHeading {
   text-align: center;
   padding: 10px;
-  font-size: 2vw;
+  font-size: 2rem;
   color: #000000;
   background-color: #f1f0f1;
   border-radius: 10px;
@@ -71,12 +71,14 @@
   font-weight: bold;
   color: #fff;
   margin-top: 1rem;
+
   div {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 1rem;
   }
+
   span {
     @include montserrat-extra-bold;
     font-weight: 600;
@@ -91,7 +93,7 @@
 }
 
 .divider {
-  display: inline-block;
+  display: flex;
   margin-right: 10px;
   color: white;
 }
@@ -107,7 +109,7 @@
     letter-spacing: 2px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     padding: 12px 24px;
     margin: 0 300px;
@@ -125,22 +127,53 @@
   }
 }
 
-/*Tall Screens*/
+@media screen and (max-width: 768px) {
+  .countdownTimer {
+    flex-wrap: wrap;
+    justify-content: center;
+    div {
+      width: 50%;
+      text-align: center;
+      margin: 10px 0;
+    }
 
-@media (min-height: 780px) and (max-height: 1500px) {
+    .top-row {
+      order: -1; /* Add this line to move the top row to the beginning */
+    }
+
+    .bottom-row {
+      order: 1; /* Add this line to move the bottom row to the end */
+    }
+    .divider {
+      display: none;
+    }
+  }
 }
-
 /* Mobile Portrait */
 @media screen and (max-width: 640px) {
   .heading {
     margin-top: 50px;
-    font-size: 10vw;
+    font-size: 2.5rem;
   }
 
   .subHeading {
-    font-size: 5vw;
+    font-size: 1.5rem;
     width: 45%;
     margin: 20px auto;
+  }
+
+  .countdownTimer {
+    div {
+      width: 100px;
+    }
+
+    span {
+      font-size: 4rem;
+    }
+
+    h1 {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -148,13 +181,34 @@
 @media screen and (min-width: 641px) and (max-width: 767px) {
   .heading {
     margin-top: 50px;
-    font-size: 8vw;
+    font-size: 4rem;
   }
 
   .subHeading {
-    font-size: 4vw;
+    font-size: 2rem;
     width: 45%;
     margin: 30px auto;
+  }
+
+  .countdownTimer {
+    flex-wrap: wrap;
+    justify-content: center;
+    div {
+      width: 50%;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .top-row {
+      order: -1; /* Add this line to move the top row to the beginning */
+    }
+
+    .bottom-row {
+      order: 1; /* Add this line to move the bottom row to the end */
+    }
+    .divider {
+      display: none;
+    }
   }
 }
 
@@ -162,11 +216,9 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .heading {
     margin-top: 50px;
-    font-size: 8vw;
   }
 
   .subHeading {
-    font-size: 4vw;
     width: 45%;
     margin: 30px auto;
   }
@@ -174,13 +226,6 @@
 
 /* Tablet Landscape */
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
-  .heading {
-    font-size: 6vw;
-  }
-
-  .subHeading {
-    font-size: 3vw;
-  }
 }
 
 /* Desktop */

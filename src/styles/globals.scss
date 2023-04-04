@@ -39,3 +39,23 @@ body {
     color: #000000;
   }
 }
+
+/* Base font size */
+html {
+  font-size: 16px;
+}
+
+/* Increase font size for small screens */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Increase font size for large screens */
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+

@@ -8,11 +8,32 @@ import { motion } from "framer-motion";
 export default function Home() {
   const countdownTimerRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
+  const [screenSize, setScreenSize] = useState(1);
+  console.log(screenSize);
   const router = useRouter();
 
   const handleClick = async () => {
     setIsLoading(true);
   };
+
+  useEffect(() => {
+    function handleResize() {
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+      const smallestDimension = Math.min(screenWidth, screenHeight);
+      const screenSize = smallestDimension / 1000; // Divide by 1000 to get a value between 0 and 1
+      setScreenSize(screenSize);
+    }
+
+    // Add an event listener to update the screenSize variable when the screen size changes
+    window.addEventListener("resize", handleResize);
+
+    // Call the handleResize function once to initialize the screenSize variable
+    handleResize();
+
+    // Remove the event listener when the component unmounts
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const handleRouteChangeComplete = () => {
@@ -37,8 +58,10 @@ export default function Home() {
     secondsPercentage: 0,
   });
 
-  function createCircularProgressBar(percentage, unit, value) {
-    const radius = 60;
+  function createCircularProgressBar(percentage, unit, value, screenSize) {
+    const maxRadius = 60;
+    const minRadius = 30;
+    const radius = Math.max(minRadius, maxRadius * screenSize);
     const circumference = 2 * Math.PI * radius;
     const strokeDashoffset = circumference * (1 - percentage);
 
@@ -160,7 +183,7 @@ export default function Home() {
       className={styles.heroContainer}
     >
       <div className={styles.textContainer}>
-        <h1 className={styles.heading}>Brains & Brawn</h1>
+        <h1 className={styles.heading}>Powerplay Africa</h1>
         <h2 className={styles.subHeading}>
           Building Stronger Bonds and Boosting Productivity
         </h2>
@@ -170,35 +193,39 @@ export default function Home() {
           ref={countdownTimerRef}
           className={styles.countdownTimer}
         >
-          <div>
+          <div className={screenSize <= 0.7 ? "" : styles.topRow}>
             {createCircularProgressBar(
               1 - timeValues.daysPercentage,
               "D",
-              timeValues.days
+              timeValues.days,
+              screenSize
             )}
           </div>
           <div className={styles.divider}>|</div>
-          <div>
+          <div className={screenSize <= 0.7 ? "" : styles.topRow}>
             {createCircularProgressBar(
               1 - timeValues.hoursPercentage,
               "H",
-              timeValues.hours
+              timeValues.hours,
+              screenSize
             )}
           </div>
           <div className={styles.divider}>|</div>
-          <div>
+          <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
             {createCircularProgressBar(
               1 - timeValues.minutesPercentage,
               "M",
-              timeValues.minutes
+              timeValues.minutes,
+              screenSize
             )}
           </div>
           <div className={styles.divider}>|</div>
-          <div>
+          <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
             {createCircularProgressBar(
               1 - timeValues.secondsPercentage,
               "S",
-              timeValues.seconds
+              timeValues.seconds,
+              screenSize
             )}
           </div>
         </div>

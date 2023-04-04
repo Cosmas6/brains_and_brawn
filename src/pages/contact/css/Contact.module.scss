@@ -85,10 +85,11 @@
 }
 
 .sendButton {
-  background-color: #007bff;
+  background-color: #0f88f5;
   border: none;
   color: #fff;
-  padding: 1rem 11rem;
+  padding: 1rem 1rem;
+  width: 75%;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 
@@ -98,7 +99,7 @@
 }
 
 .socialMediaSection {
-  background-color: black;
+  background-color: #754b07;
   margin-top: -100px;
   z-index: 5;
 }
@@ -140,8 +141,86 @@
   }
 }
 
-@media (max-width: 767.98px) {
+/* Mobile Portrait */
+@media screen and (max-width: 640px) {
+  .heroBackground {
+    h2 {
+      margin-bottom: 3rem;
+      margin-left: 2rem;
+      font-size: 3.5rem;
+    }
+  }
+
+  .leftColumn {
+    padding: 2rem 2rem;
+  }
+
+  .sendButton {
+    width: 50%;
+  }
+  .socialMediaSection {
+    margin-top: 50px;
+  }
+
+  .socialMedia {
+    margin-top: 1rem;
+    margin-left: 1rem;
+
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  .socialMediaItem {
+    .socialMediaText {
+      font-size: 1.2rem;
+    }
+  }
+
+  .contactForm {
+    p {
+      justify-content: center;
+    }
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (min-width: 641px) and (max-width: 767px) {
   .socialMedia {
     padding-top: 2rem;
   }
+
+  .socialMediaSection {
+    margin-top: 50px;
+  }
+}
+
+/* Tablet Portrait */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .heroBackground {
+    h2 {
+      font-size: 4rem;
+    }
+  }
+
+  .socialMediaSection {
+    margin-top: 50px;
+  }
+
+  .leftColumn {
+    padding-left: 0px; /* Adjust this value to control the gap between columns */
+    padding-right: 0px;
+  }
+}
+
+/* Tablet Landscape */
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) and (max-width: 1680px) {
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1681px) {
 }

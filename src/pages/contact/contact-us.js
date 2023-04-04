@@ -13,9 +13,9 @@ export default function ContactUs() {
       <div className={styles.heroBackground}>
         <h2>Contact Us</h2>
       </div>
-      <div className="container">
+      <div className={`${styles.contactContainer} container`}>
         <div className="row">
-          <div className={`${styles.leftColumn} col-md-6`}>
+          <div className={`${styles.leftColumn} col-lg-6`}>
             <div className={styles.contactForm}>
               <p>Feel free to contact us with any questions or concerns.</p>
 
@@ -46,7 +46,7 @@ export default function ContactUs() {
               <button className={styles.sendButton}>Send</button>
             </div>
           </div>
-          <div className={`${styles.socialMediaSection} col-md-6`}>
+          <div className={`${styles.socialMediaSection} col-lg-6`}>
             <div className={styles.socialMedia}>
               <h2>Info</h2>
               <div className={styles.socialMediaItem}>

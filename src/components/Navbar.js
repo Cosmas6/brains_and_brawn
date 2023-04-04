@@ -5,7 +5,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
-import logoImage from "public/b&b.png";
+import logoImage from "public/PowerPlay.png";
 import homeImage from "public/images/homeImage.png";
 import eventImage from "public/images/eventImage.png";
 import aboutNavImage from "public/images/aboutNavImage.png";
@@ -93,17 +93,17 @@ export default function Navbar() {
         <div className={styles.socialLinks}>
           <FontAwesomeIcon
             icon={faFacebook}
-            color="#f59c0f"
+            color="#147c14"
             className={styles.icon}
           />
           <FontAwesomeIcon
             icon={faTwitter}
-            color="#f59c0f"
+            color="#147c14"
             className={styles.icon}
           />
           <FontAwesomeIcon
             icon={faInstagram}
-            color="#f59c0f"
+            color="#147c14"
             className={styles.icon}
           />
         </div>

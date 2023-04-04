@@ -31,10 +31,40 @@ const Carousel = ({ children }) => {
     speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div class="carousel-container">
+    <div className="carousel-container">
       <Slider className={styles.slickSlider} {...settings}>
         {children}
       </Slider>
@@ -77,7 +107,6 @@ export default function TicketPage() {
                 Events and Subscribe today!🌟
               </p>
             </div>
-
             <div className={styles.subscribeEmail}>
               <label htmlFor="emailInput" className={styles.emailInputLabel}>
                 <input
