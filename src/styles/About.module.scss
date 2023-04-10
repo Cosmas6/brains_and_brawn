@@ -9,8 +9,6 @@
   position: relative;
   margin: 0 auto;
   z-index: 1;
-  height: 100vh;
-  margin-top: 100px;
 
   &:before {
     content: "";
@@ -29,7 +27,7 @@
 
 .aboutHeading {
   text-align: center;
-  margin: 30px auto;
+  padding: 50px 0px;
   font-size: 3vw;
   color: #be7420;
   font-weight: 700;
@@ -89,6 +87,10 @@
     margin: 25px 25px;
   }
 
+  .bgImageContainer {
+    min-height: 200px;
+  }
+
   .aboutDescription {
     font-size: 20px;
   }
@@ -109,7 +111,10 @@
 
   .aboutHeading {
     font-size: 7vw;
-    margin: 25px 25px;
+  }
+
+  .bgImageContainer {
+    min-height: 250px;
   }
 
   .aboutDescription {
@@ -133,7 +138,10 @@
 
   .aboutHeading {
     font-size: 6vw;
-    margin: 50px 25px;
+  }
+
+  .bgImageContainer {
+    min-height: 300px;
   }
 
   .aboutDescription {
@@ -162,7 +170,10 @@
 
   .aboutHeading {
     font-size: 6vw;
-    margin: 50px 25px;
+  }
+
+  .bgImageContainer {
+    min-height: 300px;
   }
 
   .aboutDescription {
@@ -187,7 +198,6 @@
 
   .aboutHeading {
     font-size: 5vw;
-    margin: 50px 25px;
   }
 
   .aboutDescription {

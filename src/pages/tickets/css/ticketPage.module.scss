@@ -54,11 +54,12 @@
   border: none;
   outline: none;
   background-color: transparent;
-  font-size: 1rem;
   color: #333;
+  width: 100%;
   @include montserrat-light;
   &::placeholder {
     color: #999;
+    font-size: 1rem;
   }
 }
 
@@ -230,6 +231,24 @@
 }
 
 /* Mobile Portrait */
+
+@media screen and (max-width: 460px) {
+  .emailInput {
+    &::placeholder {
+      font-size: 0.5rem;
+    }
+  }
+
+  .card {
+    width: 180px;
+    min-width: 250px;
+  }
+
+  .cardContent {
+    width: 230px;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .bigText {
     margin-left: 1rem;
@@ -247,11 +266,8 @@
   }
 
   .emailInput {
-    font-size: 0.8rem;
-    color: #333;
-    @include montserrat-light;
     &::placeholder {
-      color: #999;
+      font-size: 1rem;
     }
   }
 
@@ -279,6 +295,12 @@
     margin-left: 3rem;
   }
 
+  .emailInput {
+    &::placeholder {
+      font-size: 1rem;
+    }
+  }
+
   .ticketCards {
     flex-direction: column;
   }
@@ -298,10 +320,6 @@
 
 /* Tablet Portrait */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .ticketCards {
-    overflow-x: auto;
-  }
-
   .parallaxImageContainer {
     width: 100%;
     position: static;
@@ -309,6 +327,13 @@
 
   .parallaxImage {
     position: static;
+  }
+
+  .emailInput {
+    font-size: 1.1rem;
+    &::placeholder {
+      font-size: 0.8rem;
+    }
   }
 
   .card {
@@ -330,6 +355,12 @@
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
   .parallaxImageContainer {
     width: 100%;
+  }
+
+  .emailInput {
+    &::placeholder {
+      font-size: 0.8rem;
+    }
   }
 }
 

@@ -7,11 +7,10 @@
 
 .descriptionContainer {
   position: relative;
-  height: 100vh;
+  margin-top: 100px;
 }
 
 .containerRow {
-  padding-top: 50px;
   --bs-gutter-x: 0;
 }
 
@@ -59,7 +58,6 @@
   .leftColumn {
     h1 {
       font-size: 7vw;
-      
     }
     p {
       font-size: 20px;

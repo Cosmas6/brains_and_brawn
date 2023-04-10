@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "@/styles/Home.module.scss";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { motion } from "framer-motion";
+import logoImage from "public/images/PowerPlayLogo.png";
 
 export default function Home() {
   const countdownTimerRef = useRef();
@@ -66,7 +68,7 @@ export default function Home() {
     const strokeDashoffset = circumference * (1 - percentage);
 
     return (
-      <svg width="150" height="150" viewBox="0 -50 50 150">
+      <svg width="180" height="180" viewBox="0 -50 50 150">
         <circle
           cx="25"
           cy="25"
@@ -79,7 +81,7 @@ export default function Home() {
           cx="25"
           cy="25"
           r={radius}
-          stroke="#FD8A08"
+          stroke="#faf30c"
           strokeWidth="7"
           strokeLinecap="round"
           strokeDasharray={circumference}
@@ -183,10 +185,16 @@ export default function Home() {
       className={styles.heroContainer}
     >
       <div className={styles.textContainer}>
-        <h1 className={styles.heading}>Powerplay Africa</h1>
-        <h2 className={styles.subHeading}>
+        <div className={styles.logoImageContainer}>
+          <Image
+            src={logoImage}
+            className={styles.logoImage}
+            alt="B&B Description Image"
+          />
+        </div>
+        {/* <h2 className={styles.subHeading}>
           Building Stronger Bonds and Boosting Productivity
-        </h2>
+        </h2> */}
         <h2 className={styles.subHeading2}>[Latest Event Name:]</h2>
         <div
           id="countdown-timer"
@@ -238,6 +246,10 @@ export default function Home() {
               "Buy Tickets"
             )}
           </Link>
+        </div>
+        <div className={styles.learnMore}>
+          <Link href="#aboutContainer">Learn More</Link>
+          <div className={styles.arrow}></div>
         </div>
       </div>
     </motion.section>

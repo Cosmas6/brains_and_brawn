@@ -13,6 +13,14 @@ const Carousel = ({ children }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
   };
 
   return (
@@ -39,10 +47,7 @@ export default function EventCarousel() {
         <h1>Come Explore with Our Team of Fun-Seekers!</h1>
         <p>
           We're not just a team building company, we're a community of
-          adventure-seekers! Get to know us and see what makes us stand out. Our
-          diverse team is made up of people just like you, who are passionate
-          about having fun and building connections. Swipe through and find your
-          next adventure with us!
+          adventure-seekers! Get to know us and see what makes us stand out.
         </p>
       </div>
 

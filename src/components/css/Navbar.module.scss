@@ -17,7 +17,7 @@
   right: 0;
   width: 100px;
   height: 80px;
-  background-color: #f59c0f;
+  background-color: #147c14;
   border-radius: 0 0 0 100%;
   transition: all 0.5s ease;
   pointer-events: auto;
@@ -117,13 +117,13 @@
 .expanded .line:nth-child(1) {
   left: 5px;
   top: 22.5px;
-  background-color: #f59c0f;
+  background-color: #147c14;
 }
 
 .expanded .line:nth-child(2) {
   left: calc(50% - 5px);
   top: 22.5px;
-  background-color: #f59c0f;
+  background-color: #147c14;
 }
 
 .expanded .line:nth-child(3) {
@@ -139,13 +139,13 @@
 .expanded .line:nth-child(5) {
   left: 5px;
   top: 31.5px;
-  background-color: #f59c0f;
+  background-color: #147c14;
 }
 
 .expanded .line:nth-child(6) {
   left: calc(50% - 5px);
   top: 31.5px;
-  background-color: #f59c0f;
+  background-color: #147c14;
 }
 
 .logo {
@@ -182,7 +182,7 @@
 }
 
 .navItem {
-  font-size: 5rem;
+  font-size: 3rem;
   cursor: pointer;
 
   @include montserrat-medium;
@@ -254,7 +254,7 @@
 /* Mobile Portrait */
 @media screen and (max-width: 640px) {
   .navItem {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .expanded .navigationList {
@@ -268,6 +268,10 @@
 
 /* Mobile Landscape */
 @media screen and (min-width: 641px) and (max-width: 767px) {
+  .navItem {
+    font-size: 3.5rem;
+  }
+
   .expanded .imageContainer {
     display: none;
   }
