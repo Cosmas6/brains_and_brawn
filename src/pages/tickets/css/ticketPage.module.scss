@@ -24,7 +24,7 @@
   margin-top: 4rem;
   margin-bottom: 2rem;
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     letter-spacing: 3px;
     color: #f27405;
@@ -32,7 +32,7 @@
   }
   p {
     margin-top: 50px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #000000;
     @include montserrat-extra-light;
   }
@@ -120,7 +120,7 @@
 }
 
 .ticketSection {
-  height: auto;
+  height: 100%;
   padding: 2rem 0;
   background-color: #f1f0f1;
 }
@@ -131,7 +131,7 @@
   margin-bottom: 20px;
   h2 {
     @include montserrat-regular;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #f93207;
 
     text-align: center;
@@ -235,7 +235,7 @@
 @media screen and (max-width: 460px) {
   .emailInput {
     &::placeholder {
-      font-size: 0.5rem;
+      font-size: 5rem;
     }
   }
 
@@ -246,6 +246,16 @@
 
   .cardContent {
     width: 230px;
+  }
+
+  .parallaxImageContainer {
+    width: 70%;
+    position: static;
+    margin: 0 auto;
+  }
+
+  .parallaxImage {
+    position: static;
   }
 }
 
@@ -276,8 +286,9 @@
   }
 
   .parallaxImageContainer {
-    width: 100%;
+    width: 50%;
     position: static;
+    margin: 0 auto;
   }
 
   .parallaxImage {
@@ -309,8 +320,9 @@
   }
 
   .parallaxImageContainer {
-    width: 100%;
+    width: 50%;
     position: static;
+    margin: 0 auto;
   }
 
   .parallaxImage {
@@ -321,8 +333,9 @@
 /* Tablet Portrait */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .parallaxImageContainer {
-    width: 100%;
+    width: 50%;
     position: static;
+    margin: 0 auto;
   }
 
   .parallaxImage {
@@ -372,9 +385,5 @@
 @media screen and (min-width: 1681px) {
   .halfScreenSection {
     max-height: 70%;
-  }
-
-  .ticketSection {
-    max-height: 45vh;
   }
 }

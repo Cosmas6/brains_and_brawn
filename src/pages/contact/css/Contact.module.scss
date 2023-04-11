@@ -30,7 +30,7 @@
   }
 
   h2 {
-    font-size: 5rem;
+    font-size: 3rem;
     margin-bottom: 5rem;
     margin-left: 5rem;
     color: #f59c0f;
@@ -45,8 +45,7 @@
 
 .contactForm {
   p {
-    font-size: 1.5rem;
-    margin-top: 3rem;
+    font-size: 1.3rem;
     margin-bottom: 3rem;
     @include montserrat-light;
   }
@@ -54,7 +53,7 @@
 
 .inputField {
   position: relative;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
   @include montserrat-light;
 
   .formControl {
@@ -115,7 +114,7 @@
   margin-left: 3rem;
 
   h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     color: white;
     @include montserrat-bold;
@@ -136,7 +135,7 @@
   .socialMediaText {
     margin-left: 1rem;
     margin-bottom: 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: white;
   }
 }
