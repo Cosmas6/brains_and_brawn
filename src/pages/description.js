@@ -12,7 +12,7 @@ export default function Description() {
             <h1>Elevate Your Team's Performance</h1>
             <p>
               Are you looking to take your team's performance to the next level?
-              Brains and Brawn offers a variety of proven techniques that are
+              PowerPlay offers a variety of proven techniques that are
               designed to help teams work more effectively together. From
               virtual and in-person activities to personalized coaching, our
               services are tailored to meet the unique needs of your team.

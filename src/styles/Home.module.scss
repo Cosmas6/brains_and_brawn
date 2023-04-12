@@ -103,11 +103,11 @@
 }
 
 .ctaButton {
-  margin-top: 50px;
+  margin: 0 auto;
+  display: flex; // Add this line
+  align-items: center; // Add this line
+  justify-content: center; // Add this line
   a {
-    display: flex; // Add this line
-    align-items: center; // Add this line
-    justify-content: center; // Add this line
     border: 4px solid #faf30c;
     color: #147c14;
     letter-spacing: 2px;
@@ -116,7 +116,7 @@
     font-size: 1rem;
     font-weight: bold;
     padding: 12px 24px;
-    margin: 0 300px;
+    width: 200px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -195,6 +195,20 @@
     }
   }
 }
+
+@media screen and (max-width: 400px) {
+  .countdownTimer {
+    div {
+      width: 50px;
+      margin: 10px 0px;
+    }
+
+    text {
+      font-size: 0.8rem;
+    }
+  }
+}
+
 /* Mobile Portrait */
 @media screen and (max-width: 640px) {
   .heading {
@@ -279,7 +293,6 @@
     width: 45%;
     margin: 30px auto;
   }
-
 }
 
 /* Tablet Landscape */

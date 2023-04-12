@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Brains and Brawn</title>
+        <title>PowerPlay</title>
         <meta
           name="description"
           content="Building Stronger Teams, One Adventure at a Time"

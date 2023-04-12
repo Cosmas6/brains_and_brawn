@@ -1,5 +1,5 @@
-# Brains and Brawn
-Welcome to Brains and Brawn, a team building website that specializes in organizing events and providing engaging games for clients to enjoy. Our mission is to bring people together and create unforgettable experiences through team building activities.
+# PowerPlay
+Welcome to PowerPlay, a team building website that specializes in organizing events and providing engaging games for clients to enjoy. Our mission is to bring people together and create unforgettable experiences through team building activities.
 
 ## How it Works
 Clients can connect with us through our website, where they can browse our upcoming events and purchase tickets. Our events are designed to be fun, challenging, and educational, and are suitable for teams of all sizes. We also offer a variety of games that clients can participate in, both online and in-person, to enhance their team building skills.
