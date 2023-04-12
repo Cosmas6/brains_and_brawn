@@ -20,8 +20,8 @@
   h1 {
     position: relative;
     font-weight: 700;
-    font-size: 4vw;
-    color: #104d46;
+    font-size: 3rem;
+    color: #31207D;
     margin: 30px 30px;
     @include montserrat-light;
   }
@@ -29,7 +29,7 @@
   p {
     margin: 30px 30px;
     font-weight: 600;
-    font-size: 50px;
+    font-size: 1.5rem;
     text-align: left;
     color: #072421;
     @include montserrat-extra-light;
@@ -50,18 +50,21 @@
   object-fit: contain;
 }
 
-/* Mobile Portrait */
-@media screen and (max-width: 640px) {
-  .containerRow {
-    flex-direction: column-reverse;
-  }
+@media screen and (max-width: 460px) {
   .leftColumn {
     h1 {
-      font-size: 7vw;
+      font-size: 1.5rem;
     }
     p {
-      font-size: 20px;
+      font-size: 1rem;
     }
+  }
+}
+
+/* Mobile Portrait */
+@media screen and (min-width: 461px) and (max-width: 640px) {
+  .containerRow {
+    flex-direction: column-reverse;
   }
 }
 
@@ -73,11 +76,9 @@
 
   .leftColumn {
     h1 {
-      font-size: 6vw;
       margin: 0 50px;
     }
     p {
-      font-size: 30px;
       margin: 50px 50px;
     }
   }
@@ -91,11 +92,9 @@
 
   .leftColumn {
     h1 {
-      font-size: 6vw;
       margin: 0 70px;
     }
     p {
-      font-size: 30px;
       margin: 70px 70px;
     }
   }
@@ -105,11 +104,9 @@
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
   .leftColumn {
     h1 {
-      font-size: 5vw;
       margin: 0 50px;
     }
     p {
-      font-size: 30px;
       margin: 50px 50px;
     }
   }
@@ -128,7 +125,6 @@
 
     p {
       margin: 70px 70px;
-      font-size: 30px;
     }
   }
   .descImageContainer {
@@ -143,7 +139,6 @@
       margin: 0 100px;
     }
     p {
-      font-size: 30px;
       margin: 100px 100px;
     }
   }

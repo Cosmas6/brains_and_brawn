@@ -102,7 +102,7 @@ export default function TicketPage() {
     >
       <div className={styles.ticketPageContainer}>
         <div className={`row ${styles.halfScreenSection}`}>
-          <div className={`col-lg-6 ${styles.fullHeightColumn}`}>
+          <div className={`col-lg-6 ${styles.textColumn}`}>
             <div className={styles.bigText}>
               <h1>Teamwork. Adventure. Book Now.</h1>
               <p>
@@ -121,7 +121,7 @@ export default function TicketPage() {
               <button className={styles.subscribeButton}>Subscribe</button>
             </div>
           </div>
-          <div className={`col-lg-6 ${styles.fullHeightColumn}`}>
+          <div className={`col-lg-6 ${styles.imageColumn}`}>
             <div className={styles.parallaxImageContainer}>
               <Image
                 src={ticketHero}

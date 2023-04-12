@@ -8,13 +8,13 @@
 
 .carouselText {
   h1 {
-    color: #945a40;
-    font-size: 4vw;
+    color: #7D3B07;
+    font-size: 3rem;
     @include montserrat-medium;
   }
   p {
     @include montserrat-extra-light;
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: 600;
   }
 }
@@ -38,15 +38,25 @@
     object-fit: contain;
   }
 }
-
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 460px) {
   .carouselText {
     h1 {
-      font-size: 7vw;
+      font-size: 1.5rem;
       margin: 30px 30px;
     }
     p {
-      font-size: 20px;
+      font-size: 1rem;
+      margin: 30px 30px;
+    }
+  }
+}
+
+@media screen and (min-width: 461px) and (max-width: 640px) {
+  .carouselText {
+    h1 {
+      margin: 30px 30px;
+    }
+    p {
       margin: 30px 30px;
     }
   }
@@ -56,11 +66,9 @@
 @media screen and (min-width: 641px) and (max-width: 767px) {
   .carouselText {
     h1 {
-      font-size: 6vw;
       margin: 0 50px;
     }
     p {
-      font-size: 30px;
       margin: 50px 50px;
     }
   }
@@ -70,11 +78,9 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .carouselText {
     h1 {
-      font-size: 6vw;
       margin: 0 70px;
     }
     p {
-      font-size: 30px;
       margin: 70px 70px;
     }
   }
@@ -84,11 +90,9 @@
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
   .carouselText {
     h1 {
-      font-size: 5vw;
       margin: 0 50px;
     }
     p {
-      font-size: 30px;
       margin: 50px 50px;
     }
   }
@@ -103,7 +107,6 @@
 
     p {
       margin: 70px 70px;
-      font-size: 30px;
     }
   }
 }
@@ -115,7 +118,6 @@
       margin: 0 100px;
     }
     p {
-      font-size: 30px;
       margin: 100px 100px;
     }
   }

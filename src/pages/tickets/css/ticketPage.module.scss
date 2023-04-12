@@ -4,8 +4,8 @@
   max-height: 50%;
 }
 
-
-.fullHeightColumn {
+.textColumn,
+.imageColumn {
   height: inherit;
   display: flex;
   justify-content: center;
@@ -13,17 +13,18 @@
   flex-direction: column;
 }
 
+.textColumn {
+  padding: 30px 30px;
+}
+
 .bigText {
-  margin-left: 4rem;
-  margin-top: 4rem;
   margin-bottom: 2rem;
   h1 {
     font-size: 3rem;
     font-weight: bold;
     letter-spacing: 3px;
-    color: #658a0f;
-
-    @include montserrat-light;
+    color: #658a0f; 
+    @include montserrat-bold;
   }
   p {
     margin-top: 50px;
@@ -39,9 +40,8 @@
   display: flex;
   justify-content: flex-start;
   padding: 10px 20px;
-  width: 70%;
+  width: 100%;
   align-self: flex-start;
-  margin-left: 4rem;
   margin-bottom: 4rem;
 }
 
@@ -62,7 +62,6 @@
   display: flex;
   flex-grow: 2;
   cursor: text;
-
 }
 
 .subscribeButton {
@@ -79,8 +78,8 @@
   text-transform: uppercase;
   &:hover {
     background-color: transparent;
-    color: #f27405;
-    border: 1px solid #f27405;
+    color: #0f8a55;
+    border: 1px solid #0f8a55;
   }
 }
 
@@ -118,7 +117,6 @@
 .ticketSection {
   height: 100%;
   padding: 2rem 0;
-
 }
 
 .ticketHeading {
@@ -228,10 +226,29 @@
 /* Mobile Portrait */
 
 @media screen and (max-width: 460px) {
+  .bigText {
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+
   .emailInput {
     &::placeholder {
       font-size: 0.7rem !important;
     }
+  }
+
+  .parallaxImageContainer {
+    width: 95%;
+    position: static;
+    margin: 0 auto;
+  }
+
+  .parallaxImage {
+    position: static;
   }
 
   .card {
@@ -244,22 +261,7 @@
   }
 }
 
-@media screen and (max-width: 640px) {
-  .bigText {
-    margin-left: 1rem;
-    h1 {
-      font-size: 3rem;
-    }
-    p {
-      font-size: 1.5rem;
-    }
-  }
-
-  .subscribeEmail {
-    margin-left: 1rem;
-    width: 90%;
-  }
-
+@media screen and (min-width: 461px) and (max-width: 640px) {
   .emailInput {
     &::placeholder {
       font-size: 1rem;
@@ -283,12 +285,8 @@
 
 /* Mobile Landscape */
 @media screen and (min-width: 641px) and (max-width: 767px) {
-  .bigText {
-    margin-left: 3rem;
-  }
-
-  .subscribeEmail {
-    margin-left: 3rem;
+  .textColumn {
+    padding: 50px 50px;
   }
 
   .emailInput {
@@ -317,6 +315,10 @@
 
 /* Tablet Portrait */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .textColumn {
+    padding: 70px 70px;
+  }
+
   .parallaxImageContainer {
     width: 70%;
     position: static;
@@ -353,10 +355,6 @@
   .halfScreenSection {
     flex-direction: column-reverse;
   }
-
-  .bigText {
-    margin-top: 0;
-  }
 }
 
 /* Tablet Landscape */
@@ -370,15 +368,26 @@
       font-size: 0.8rem;
     }
   }
+
+  .textColumn {
+    padding: 50px 50px;
+  }
 }
 
 /* Desktop */
 @media screen and (min-width: 1280px) and (max-width: 1680px) {
+  .textColumn {
+    padding: 70px 70px;
+  }
 }
 
 /* Large Desktop */
 @media screen and (min-width: 1681px) {
   .halfScreenSection {
     height: 85vh;
+  }
+
+  .textColumn {
+    padding: 100px 100px;
   }
 }

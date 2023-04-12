@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./css/Contact.module.scss";
+import Link from "next/link";
 import {
   faBuilding,
   faClock,
@@ -49,22 +50,19 @@ export default function ContactUs() {
           <div className={`${styles.socialMediaSection} col-lg-6`}>
             <div className={styles.socialMedia}>
               <h2>Info</h2>
-              <div className={styles.socialMediaItem}>
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  color="#FFFFFF"
-                  className={styles.icon}
-                />
-                <p className={styles.socialMediaText}>example@example.com</p>
+              <div className={styles.itemEmailPhone}>
+                <div className={styles.email}>
+                  <Link href="mailto:ibrahim.mwakare@gmail.com">
+                    <FontAwesomeIcon icon={faEnvelope} color="#FFFFFF" />
+                  </Link>
+                </div>
+                <div className={styles.phone}>
+                  <Link href="tel:+254768254608" className={styles.phoneIcon}>
+                    <FontAwesomeIcon icon={faPhone} color="#FFFFFF" />
+                  </Link>
+                </div>
               </div>
-              <div className={styles.socialMediaItem}>
-                <FontAwesomeIcon
-                  icon={faPhone}
-                  color="#FFFFFF"
-                  className={styles.icon}
-                />
-                <p className={styles.socialMediaText}>+1 (123) 456-7890</p>
-              </div>
+
               <div className={styles.socialMediaItem}>
                 <FontAwesomeIcon
                   icon={faBuilding}

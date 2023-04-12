@@ -30,7 +30,7 @@
   }
 
   h2 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 5rem;
     margin-left: 5rem;
     color: #f59c0f;
@@ -44,7 +44,7 @@
 
 .contactForm {
   p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 3rem;
     @include montserrat-light;
   }
@@ -59,11 +59,11 @@
     background: none;
     border: none;
     border-bottom: 2px solid #000;
-    width: 80%;
+    width: 100%;
     outline: none;
     padding: 0;
     &:focus {
-      border-color: #007bff;
+      border-color: #147c14;
     }
 
     &:after {
@@ -83,7 +83,7 @@
 }
 
 .sendButton {
-  background-color: #0f88f5;
+  background-color: #147c14;
   border: none;
   border-radius: 40px;
   color: #fff;
@@ -91,6 +91,7 @@
   width: 75%;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  @include montserrat-regular;
 
   &:hover {
     background-color: #0056b3;
@@ -98,7 +99,7 @@
 }
 
 .socialMediaSection {
-  background-color: #7D3B07;
+  background-color: #8A420F;
   border-radius: 20px;
   margin-top: -100px;
   z-index: 5;
@@ -111,33 +112,65 @@
   flex-direction: column;
   justify-content: center;
   height: inherit;
-  margin-top: 3rem;
-  margin-left: 3rem;
 
   h2 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
+    text-align: center;
     color: white;
     @include montserrat-bold;
   }
 }
 
+.itemEmailPhone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+
+  .email,
+  .phone {
+    justify-content: space-between;
+    width: 50%;
+  }
+
+  .email {
+    font-size: 2.5rem;
+    text-align: right;
+    margin-right: 5rem;
+  }
+
+  .phone {
+    font-size: 2.5rem;
+    text-align: left;
+    margin-left: 5rem;
+  }
+}
+
 .socialMediaItem {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
 
   .icon {
     font-size: 2.5rem;
-    margin-right: 1rem;
+    margin-bottom: 1rem;
     width: 80px;
   }
 
   .socialMediaText {
-    margin-left: 1rem;
-    margin-bottom: 0;
     font-size: 1.3rem;
     color: white;
+    @include montserrat-regular;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .socialMediaSection {
+    border-radius: 20px 20px 0 0;
   }
 }
 
@@ -160,9 +193,6 @@
   }
 
   .socialMedia {
-    margin-top: 1rem;
-    margin-left: 1rem;
-
     h2 {
       font-size: 3rem;
     }

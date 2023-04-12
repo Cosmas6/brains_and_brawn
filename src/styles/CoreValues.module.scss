@@ -20,7 +20,7 @@
   text-align: center;
   margin: 50px auto;
   h1 {
-    font-size: 4vw;
+    font-size: 3rem;
     color: #f45965;
     font-weight: 700;
     @include montserrat-regular;
@@ -33,13 +33,13 @@
   h1 {
     color: #bd7c04;
     font-weight: 700;
-    font-size: 4vw;
+    font-size: 2.5rem;
     @include montserrat-regular;
   }
 
   p {
     font-weight: 600;
-    font-size: 30px;
+    font-size: 1.5rem;
     @include montserrat-extra-light;
   }
 }
@@ -47,16 +47,17 @@
 .collaboration {
   grid-area: collaboration;
   text-align: right;
+  margin-left: 30px;
   h1 {
     color: #499d94;
     font-weight: 700;
-    font-size: 4vw;
+    font-size: 2.5rem;
     @include montserrat-regular;
   }
 
   p {
     font-weight: 600;
-    font-size: 30px;
+    font-size: 1.5rem;
     @include montserrat-extra-light;
   }
 }
@@ -83,17 +84,18 @@
 .innovation {
   grid-area: innovation;
   text-align: left;
+  margin-right: 30px;
 
   h1 {
     color: #5774a8;
     font-weight: 700;
-    font-size: 4vw;
+    font-size: 2.5rem;
     @include montserrat-regular;
   }
 
   p {
     font-weight: 600;
-    font-size: 30px;
+    font-size: 1.5rem;
     @include montserrat-extra-light;
   }
 }
@@ -104,19 +106,19 @@
   h1 {
     color: #f45965;
     font-weight: 700;
-    font-size: 4vw;
+    font-size: 2.5rem;
     @include montserrat-regular;
   }
 
   p {
     font-weight: 600;
-    font-size: 30px;
+    font-size: 1.5rem;
     @include montserrat-extra-light;
   }
 }
 
 /* Mobile Portrait */
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 460px) {
   .coreContainer {
     grid-template-columns: auto;
     grid-template-rows: auto auto auto auto auto auto;
@@ -124,22 +126,30 @@
     margin: 30px;
   }
 
-  .header {
-    h1 {
-      font-size: 10vw;
-    }
-  }
-
   .excellence,
   .collaboration,
   .innovation,
   .agility {
     h1 {
-      font-size: 7vw;
+      font-size: 1.5rem;
     }
 
     p {
-      font-size: 20px;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 461px) and (max-width: 640px) {
+  .coreContainer {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas: "header" "imageContainer" "excellence" "collaboration" "innovation" "agility";
+    margin: 30px;
+  }
+  .header {
+    h1 {
+      font-size: 10vw;
     }
   }
 }
@@ -163,7 +173,7 @@
   .innovation,
   .agility {
     h1 {
-      font-size: 6vw;
+      font-size: 5vw;
     }
   }
 }
@@ -182,15 +192,6 @@
     }
   }
 
-  .excellence,
-  .collaboration,
-  .innovation,
-  .agility {
-    h1 {
-      font-size: 6vw;
-    }
-  }
-
   .coreImage {
     max-width: 80%;
   }
@@ -198,12 +199,6 @@
 
 /* Tablet Landscape */
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
-  .header {
-    h1 {
-      font-size: 6vw;
-    }
-  }
-
   .coreImage {
     max-width: 200%;
   }
