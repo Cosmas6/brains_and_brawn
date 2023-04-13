@@ -195,7 +195,7 @@ export default function Home() {
         {/* <h2 className={styles.subHeading}>
           Building Stronger Bonds and Boosting Productivity
         </h2> */}
-        <h2 className={styles.subHeading2}>[Latest Event Name:]</h2>
+        <h2 className={styles.eventName}>[Latest Event Name:]</h2>
         <div
           id="countdown-timer"
           ref={countdownTimerRef}

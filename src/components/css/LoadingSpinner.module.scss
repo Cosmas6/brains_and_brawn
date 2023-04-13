@@ -1,10 +1,10 @@
 // styles/LoadingSpinner.module.scss
 .spinner {
-  border: 4px solid #f59c0f;
+  border: 4px solid #147c14;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border-left-color: white;
+  border-left-color: #faf30c;
   animation: spin 1s linear infinite;
 
   @keyframes spin {
