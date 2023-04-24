@@ -1,7 +1,7 @@
 import styles from "./css/Modal.module.scss";
 import TicketSale from "./ticketSale";
 
-export default function Modal({ closeModal }) {
+export default function Modal({ closeModal, ticketName, ticketDescription }) {
   return (
     <div className={styles.modalOverlay}>
       <div className={`container ${styles.modal}`}>
@@ -22,7 +22,10 @@ export default function Modal({ closeModal }) {
           </div>
           <div className="col-lg-6">
             <div className={styles.ticketSection}>
-              <TicketSale />
+              <TicketSale
+                ticketName={ticketName}
+                ticketDescription={ticketDescription}
+              />
             </div>
           </div>
         </div>

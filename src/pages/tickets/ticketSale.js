@@ -1,7 +1,7 @@
 import { useState } from "react";
-import styles from "./css/TicketSale.module.scss";
+import styles from "./css/ticketSale.module.scss";
 
-export default function TicketSale() {
+export default function TicketSale({ ticketName, ticketDescription }) {
   const [earlyBirdQuantity, setEarlyBirdQuantity] = useState(0);
   const [gateQuantity, setGateQuantity] = useState(0);
 
@@ -23,8 +23,8 @@ export default function TicketSale() {
       <table className={styles.ticketsTable}>
         <thead>
           <tr>
-            <th>Ticket</th>
-            <th>Price</th>
+            <th>{ticketName}</th>
+            <th>{ticketDescription}</th>
             <th>Quantity</th>
             <th>Total</th>
           </tr>

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,6 +6,7 @@ import ticketHero from "public/images/ticketHeroImage.png";
 import ticketEvent from "public/images/ticketEvent.jpg";
 import { motion } from "framer-motion";
 import styles from "./css/ticketPage.module.scss";
+import Modal from "./ticketModal";
 
 const pageVariants = {
   initial: {
@@ -25,7 +27,7 @@ const pageVariants = {
   },
 };
 
-const Carousel = ({ children }) => {
+const Carousel = ({ children, openModal }) => {
   const settings = {
     dots: true,
     speed: 1000,
@@ -43,7 +45,7 @@ const Carousel = ({ children }) => {
       {
         breakpoint: 1024,
         settings: {
-        slidesToShow: 1,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -66,16 +68,22 @@ const Carousel = ({ children }) => {
     ],
   };
 
+  const handleCardClick = (title, description) => {
+    openModal(title, description);
+  };
+
   return (
     <div className="carousel-container">
       <Slider className={styles.slickSlider} {...settings}>
-        {children}
+        {React.Children.map(children, (child) => {
+          return React.cloneElement(child, { handleClick: handleCardClick });
+        })}
       </Slider>
     </div>
   );
 };
 
-const TicketCard = ({ title, description, imgSrc }) => {
+const TicketCard = ({ title, description, imgSrc, handleClick }) => {
   return (
     <div className={styles.card}>
       <Image src={imgSrc} alt={title} className={styles.cardImage} />
@@ -84,15 +92,39 @@ const TicketCard = ({ title, description, imgSrc }) => {
           <h3 className={styles.cardTitle}>{title}</h3>
           <p className={styles.cardDescription}>{description}</p>
         </div>
-        <Link href="#" className={styles.buyButton}>
+        <button
+          className={styles.buyButton}
+          onClick={() => handleClick(title, description)}
+        >
           Buy
-        </Link>
+        </button>
       </div>
     </div>
   );
 };
 
 export default function TicketPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [ticketInfo, setTicketInfo] = useState({ title: "", description: "" });
+
+  const openModal = (title, description) => {
+    setTicketInfo({ title, description });
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  if (modalOpen) {
+    return (
+      <Modal
+        closeModal={closeModal}
+        ticketName={ticketInfo.title}
+        ticketDescription={ticketInfo.description}
+      />
+    );
+  }
   return (
     <motion.div
       initial="initial"
@@ -107,7 +139,7 @@ export default function TicketPage() {
               <h1>Teamwork. Adventure. Book Now.</h1>
               <p>
                 Ready to Explore? Reserve Tickets Below 🎟️ or Stay Updated on
-                Events and Subscribe today!🌟
+                our Latest Events and Subscribe today!🌟
               </p>
             </div>
             <div className={styles.subscribeEmail}>
@@ -137,7 +169,7 @@ export default function TicketPage() {
           </div>
           <div className={`container ${styles.CardsWrapper}`}>
             <div className={` ${styles.ticketCards}`}>
-              <Carousel>
+              <Carousel openModal={openModal}>
                 <TicketCard
                   title="Ticket 1"
                   description="Sample description"
