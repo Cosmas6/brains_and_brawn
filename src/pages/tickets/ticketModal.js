@@ -8,8 +8,10 @@ export default function Modal({ closeModal, ticketInfo }) {
   const { title, description, imgSrc } = ticketInfo;
   const [earlyBirdQuantity, setEarlyBirdQuantity] = useState(0);
   const [gateQuantity, setGateQuantity] = useState(0);
+  const [grandTotal, setGrandTotal] = useState(0);
 
-  const handleNextStep = (amount) => {
+  const handleNextStep = (total) => {
+    setGrandTotal(total);
     setStep(2);
   };
 
@@ -35,7 +37,7 @@ export default function Modal({ closeModal, ticketInfo }) {
             setGateQuantity={setGateQuantity}
           />
         )}
-        {step === 2 && <PaymentPrompt onGoBack={handlePreviousStep} />}
+        {step === 2 && <PaymentPrompt amount={grandTotal} onGoBack={handlePreviousStep}  />}
       </div>
     </div>
   );
