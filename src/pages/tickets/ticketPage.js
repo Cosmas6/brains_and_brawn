@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import Link from "next/link";
 import ticketHero from "public/images/ticketHeroImage.png";
 import ticketEvent from "public/images/ticketEvent.jpg";
 import { motion } from "framer-motion";
 import styles from "./css/ticketPage.module.scss";
 import Modal from "./ticketModal";
+import TicketSale from "./ticketSale";
 
 const pageVariants = {
   initial: {
@@ -68,8 +68,8 @@ const Carousel = ({ children, openModal }) => {
     ],
   };
 
-  const handleCardClick = (title, description) => {
-    openModal(title, description);
+  const handleCardClick = (title, description, imgSrc) => {
+    openModal(title, description, imgSrc);
   };
 
   return (
@@ -94,7 +94,7 @@ const TicketCard = ({ title, description, imgSrc, handleClick }) => {
         </div>
         <button
           className={styles.buyButton}
-          onClick={() => handleClick(title, description)}
+          onClick={() => handleClick(title, description, imgSrc)}
         >
           Buy
         </button>
@@ -105,10 +105,14 @@ const TicketCard = ({ title, description, imgSrc, handleClick }) => {
 
 export default function TicketPage() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [ticketInfo, setTicketInfo] = useState({ title: "", description: "" });
+  const [ticketInfo, setTicketInfo] = useState({
+    title: "",
+    description: "",
+    imgSrc: "",
+  });
 
-  const openModal = (title, description) => {
-    setTicketInfo({ title, description });
+  const openModal = (title, description, imgSrc) => {
+    setTicketInfo({ title, description, imgSrc });
     setModalOpen(true);
   };
 
@@ -118,11 +122,9 @@ export default function TicketPage() {
 
   if (modalOpen) {
     return (
-      <Modal
-        closeModal={closeModal}
-        ticketName={ticketInfo.title}
-        ticketDescription={ticketInfo.description}
-      />
+      <>
+        <Modal closeModal={closeModal} ticketInfo={ticketInfo} />
+      </>
     );
   }
   return (

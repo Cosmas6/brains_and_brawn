@@ -1,34 +1,31 @@
+import React, { useState } from "react";
 import styles from "./css/Modal.module.scss";
 import TicketSale from "./ticketSale";
+import PaymentPrompt from "./paymentPrompt";
 
-export default function Modal({ closeModal, ticketName, ticketDescription }) {
+export default function Modal({ closeModal, ticketInfo }) {
+  const [step, setStep] = useState(1);
+  const { title, description, imgSrc } = ticketInfo;
+
+  const handleNextStep = (amount) => {
+    setStep(2);
+  };
+
   return (
     <div className={styles.modalOverlay}>
       <div className={`container ${styles.modal}`}>
         <button className={styles.closeButton} onClick={closeModal}>
           &times;
         </button>
-        <div className={`row ${styles.modalContent}`}>
-          <div className="col-lg-6">
-            <div class={styles.date}>
-              <div class={styles.month}>Apr</div>
-              <div class={styles.day}>29</div>
-            </div>
-
-            <div className={styles.text}>
-              <h2>Get Your Tickets</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <div className={styles.ticketSection}>
-              <TicketSale
-                ticketName={ticketName}
-                ticketDescription={ticketDescription}
-              />
-            </div>
-          </div>
-        </div>
+        {step === 1 && (
+          <TicketSale
+            ticketName={title}
+            ticketDescription={description}
+            imgSrc={imgSrc}
+            onNextStep={handleNextStep}
+          />
+        )}
+        {step === 2 && <PaymentPrompt />}
       </div>
     </div>
   );
