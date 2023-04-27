@@ -6,12 +6,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem 1rem;
 }
 
 .modalContent {
   display: flex;
   justify-content: space-between;
-  padding: 40px;
+  width: 100%;
 }
 
 .imageContainer {
@@ -76,7 +77,8 @@
 .ticketsTable {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  margin-top:2rem;
 
   th {
     @include montserrat-bold;

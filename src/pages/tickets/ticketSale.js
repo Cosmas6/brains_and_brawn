@@ -8,9 +8,12 @@ export default function TicketSale({
   ticketDescription,
   imgSrc,
   onNextStep,
+  earlyBirdQuantity,
+  setEarlyBirdQuantity,
+  gateQuantity,
+  setGateQuantity,
 }) {
-  const [earlyBirdQuantity, setEarlyBirdQuantity] = useState(0);
-  const [gateQuantity, setGateQuantity] = useState(0);
+
 
 
   const purchaseTickets = () => {
@@ -34,7 +37,7 @@ export default function TicketSale({
       <div className={`row ${styles.modalContent}`}>
         <div className="col-lg-6">
           <div className={styles.imageContainer}>
-            <img src={imgSrc} alt={ticketName} />
+            <Image src={imgSrc} alt={ticketName} width={500} height={200}/>
           </div>
         </div>
         <div className="col-lg-6">

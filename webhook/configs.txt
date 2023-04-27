@@ -1,0 +1,6 @@
+Sandbox GET link :
+https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+
+The username is your customer key and the password is your customer secret. So open postman and click the authorization tab and select type as basic auth. Fill in the Username and Password then paste the link url box.
+
+https://andela.com/insights/build/demystifying-the-m-pesa-api-lipa-na-m-pesa-online-payment/
