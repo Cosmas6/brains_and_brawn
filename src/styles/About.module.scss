@@ -27,9 +27,9 @@
 
 .aboutHeading {
   text-align: center;
-  padding: 50px 0px;
+  padding: 5rem 0;
   font-size: 3rem;
-  color: #C96516;
+  color: #c96516;
   font-weight: 700;
   @include montserrat-bold;
 }
@@ -107,6 +107,8 @@
       background-size: 450px;
     }
   }
+
+  
 
   .bgImageContainer {
     min-height: 250px;

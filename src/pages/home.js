@@ -174,6 +174,17 @@ export default function Home() {
 
   useCountdown();
 
+  const smoothScrollTo = (target) => {
+    const targetElement = document.querySelector(target);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
+  };
+
   return (
     <motion.section
       initial={{ opacity: 1 }}
@@ -247,9 +258,18 @@ export default function Home() {
             )}
           </Link>
         </div>
-        <div className={styles.learnMore}>
-          <Link href="#aboutContainer">Learn More</Link>
-          <div className={styles.arrow}></div>
+        <div className={styles.learnMoreContainer}>
+          <div
+            className={styles.learnMore}
+            tabIndex="0"
+            role="link"
+            onClick={() => {
+              smoothScrollTo("#aboutContainer");
+            }}
+          >
+            <div className={styles.text}>Learn More</div>
+            <div className={styles.arrow}></div>
+          </div>
         </div>
       </div>
     </motion.section>

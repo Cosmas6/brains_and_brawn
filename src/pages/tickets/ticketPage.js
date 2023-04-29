@@ -110,8 +110,11 @@ export default function TicketPage() {
     description: "",
     imgSrc: "",
   });
+  // ...
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const openModal = (title, description, imgSrc) => {
+    setScrollPosition(window.scrollY);
     setTicketInfo({ title, description, imgSrc });
     setModalOpen(true);
   };
@@ -123,7 +126,11 @@ export default function TicketPage() {
   if (modalOpen) {
     return (
       <>
-        <Modal closeModal={closeModal} ticketInfo={ticketInfo} />
+        <Modal
+          closeModal={closeModal}
+          ticketInfo={ticketInfo}
+          scrollPosition={scrollPosition}
+        />
       </>
     );
   }

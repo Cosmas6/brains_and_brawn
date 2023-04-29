@@ -122,34 +122,33 @@
   }
 }
 
+.learnMoreContainer {
+  a {
+    text-decoration: none;
+  }
+}
+
 .learnMore {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  cursor: pointer;
 }
 
-.learnMore a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.text {
   color: white;
   letter-spacing: 2px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 12px 24px;
-  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+
+  font-size: 1rem;
+  font-weight: bold;
   transition: color 0.3s ease;
   @include montserrat-medium;
-
   &:hover {
     background-color: transparent;
-
     color: #faf30c;
   }
 }
