@@ -18,6 +18,10 @@ import checkers from "public/images/games/checkers.png";
 import chess from "public/images/games/chess.png";
 import snakesAndLadders from "public/images/games/snakes-and-ladders.jpg";
 import darts from "public/images/games/darts.jpg";
+import cards from "public/images/games/cards.png";
+import slingShot from "public/images/games/sling-shot.jpg";
+import jenga from "public/images/games/jenga.jpg";
+import scrabble from "public/images/games/scrabble.jpg";
 import styles from "./css/games.module.scss";
 
 export default function Games() {
@@ -228,7 +232,7 @@ export default function Games() {
             </div>
             <div className={styles.gameCard}>
               <Image
-                src={bucketImage}
+                src={cards}
                 className={styles.gameImage}
                 alt="Example Image"
               />
@@ -236,7 +240,7 @@ export default function Games() {
             </div>
             <div className={styles.gameCard}>
               <Image
-                src={bucketImage}
+                src={slingShot}
                 className={styles.gameImage}
                 alt="Example Image"
               />
@@ -244,7 +248,7 @@ export default function Games() {
             </div>
             <div className={styles.gameCard}>
               <Image
-                src={bucketImage}
+                src={jenga}
                 className={styles.gameImage}
                 alt="Example Image"
               />
@@ -252,7 +256,7 @@ export default function Games() {
             </div>
             <div className={styles.gameCard}>
               <Image
-                src={bucketImage}
+                src={scrabble}
                 className={styles.gameImage}
                 alt="Example Image"
               />

@@ -8,7 +8,7 @@ import Link from "next/link";
 import logoImage from "public/PowerPlay.png";
 import homeImage from "public/images/homeImage.png";
 import eventImage from "public/images/eventImage.png";
-import aboutNavImage from "public/images/aboutNavImage.png";
+import aboutNavImage from "public/images/aboutNavImage.jpg";
 import contactImage from "public/images/contactImage.png";
 import styles from "./css/Navbar.module.scss";
 
@@ -74,7 +74,9 @@ export default function Navbar() {
             onMouseEnter={() => handleNavHover(aboutNavImage)}
             onMouseLeave={() => handleNavHover("")}
           >
-            Games
+            <Link href="/games/games" onClick={handleLinkClick}>
+              Games
+            </Link>
           </li>
           <li
             className={styles.navItem}

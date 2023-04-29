@@ -24,8 +24,9 @@
   border-radius: 20px;
   @include montserrat-medium;
   position: relative;
+  transition: color 0.3s ease;
   &:hover {
-    background-color: #f4f4f4;
+    color: #0056b3;
   }
   &:not(:last-child)::after {
     // Updated
@@ -45,7 +46,6 @@
 }
 
 .gameSectionContainer {
-  padding-top: 12rem;
   z-index: 9;
 }
 
@@ -123,7 +123,6 @@
   }
 
   .gameCategory {
-
     padding-top: 11rem; // Added
   }
 }
