@@ -22,7 +22,7 @@
   h1 {
     font-size: 3rem;
     font-weight: bold;
-    letter-spacing: 3px;
+
     color: #658a0f; 
     @include montserrat-bold;
   }
@@ -30,7 +30,7 @@
     margin-top: 50px;
     font-size: 1.5rem;
     color: #000000;
-    @include montserrat-extra-light;
+    @include montserrat-light;
   }
 }
 

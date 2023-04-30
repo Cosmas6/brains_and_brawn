@@ -31,21 +31,23 @@ export default function Modal({ closeModal, ticketInfo, scrollPosition }) {
         <button className={styles.closeButton} onClick={closeModal}>
           &times;
         </button>
-        {step === 1 && (
-          <TicketSale
-            ticketName={title}
-            ticketDescription={description}
-            imgSrc={imgSrc}
-            onNextStep={handleNextStep}
-            earlyBirdQuantity={earlyBirdQuantity}
-            setEarlyBirdQuantity={setEarlyBirdQuantity}
-            gateQuantity={gateQuantity}
-            setGateQuantity={setGateQuantity}
-          />
-        )}
-        {step === 2 && (
-          <PaymentPrompt amount={grandTotal} onGoBack={handlePreviousStep} />
-        )}
+        <div className={styles.contentContainer}>
+          {step === 1 && (
+            <TicketSale
+              ticketName={title}
+              ticketDescription={description}
+              imgSrc={imgSrc}
+              onNextStep={handleNextStep}
+              earlyBirdQuantity={earlyBirdQuantity}
+              setEarlyBirdQuantity={setEarlyBirdQuantity}
+              gateQuantity={gateQuantity}
+              setGateQuantity={setGateQuantity}
+            />
+          )}
+          {step === 2 && (
+            <PaymentPrompt amount={grandTotal} onGoBack={handlePreviousStep} />
+          )}
+        </div>
       </div>
     </div>
   );

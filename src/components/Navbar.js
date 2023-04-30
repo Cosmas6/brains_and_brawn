@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
+import { CircularProgress } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -14,7 +16,9 @@ import styles from "./css/Navbar.module.scss";
 
 export default function Navbar() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [loadingNavLink, setLoadingNavLink] = useState(null);
   const [currentImage, setCurrentImage] = useState("");
+  const router = useRouter();
 
   const handleNavHover = (imageSrc) => {
     setCurrentImage(imageSrc);
@@ -26,6 +30,13 @@ export default function Navbar() {
 
   const handleLinkClick = () => {
     setIsExpanded(false);
+  };
+
+  const handleNavLinkClick = async (route) => {
+    setLoadingNavLink(route);
+    await router.push(route);
+    setIsExpanded(false);
+    setLoadingNavLink(null);
   };
 
   const circleClasses = isExpanded
@@ -56,36 +67,72 @@ export default function Navbar() {
             onMouseEnter={() => handleNavHover(homeImage)}
             onMouseLeave={() => handleNavHover("")}
           >
-            <Link href="/" onClick={handleLinkClick}>
+            <Link
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("/");
+              }}
+            >
               Home
             </Link>
+            {loadingNavLink === "/" && (
+              <CircularProgress className={styles.loadingIcon} />
+            )}
           </li>
           <li
             className={styles.navItem}
             onMouseEnter={() => handleNavHover(eventImage)}
             onMouseLeave={() => handleNavHover("")}
           >
-            <Link href="/tickets/ticketPage" onClick={handleLinkClick}>
+            <Link
+              href="/tickets/ticketPage"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("/tickets/ticketPage");
+              }}
+            >
               Event Tickets
             </Link>
+            {loadingNavLink === "/tickets/ticketPage" && (
+              <CircularProgress className={styles.loadingIcon} />
+            )}
           </li>
           <li
             className={styles.navItem}
             onMouseEnter={() => handleNavHover(aboutNavImage)}
             onMouseLeave={() => handleNavHover("")}
           >
-            <Link href="/games/games" onClick={handleLinkClick}>
+            <Link
+              href="/games/games"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("/games/games");
+              }}
+            >
               Games
             </Link>
+            {loadingNavLink === "/games/games" && (
+              <CircularProgress className={styles.loadingIcon} />
+            )}
           </li>
           <li
             className={styles.navItem}
             onMouseEnter={() => handleNavHover(contactImage)}
             onMouseLeave={() => handleNavHover("")}
           >
-            <Link href="/contact/contact-us" onClick={handleLinkClick}>
+            <Link
+              href="/contact/contact-us"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("/contact/contact-us");
+              }}
+            >
               Get in touch
             </Link>
+            {loadingNavLink === "/contact/contact-us" && (
+              <CircularProgress className={styles.loadingIcon} />
+            )}
           </li>
         </ul>
         <div className={styles.imageContainer}>

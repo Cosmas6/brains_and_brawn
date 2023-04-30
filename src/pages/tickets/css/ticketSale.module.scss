@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem 1rem;
+  overflow-y: scroll;
 }
 
 .modalContent {
@@ -78,14 +79,10 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1rem;
-  margin-top:2rem;
+  margin-top: 2rem;
 
   th {
     @include montserrat-bold;
-  }
-
-  td {
-    @include montserrat-regular;
   }
 
   th,
@@ -102,6 +99,8 @@
     }
   }
 }
+
+
 
 .textRight {
   text-align: right;
@@ -179,5 +178,83 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1199px) {
+  .modalContent {
+    flex-direction: column;
+  }
+  .date {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .ticketsTable {
+    font-size: 0.9rem;
+  }
+  .input {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .date {
+    flex-direction: row;
+    justify-content: center; // Add this to center the month and day
+    gap: 0.5rem;
+  }
+  .ticketsTable {
+    font-size: 0.8rem;
+  }
+  .input {
+    width: 30%;
+  }
+  .purchaseBtn {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .tickets {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .ticketsTable,
+  .ticketsTable thead,
+  .ticketsTable tbody,
+  .ticketsTable tfoot,
+  .ticketsTable th,
+  .ticketsTable td,
+  .ticketsTable tr {
+    display: block;
+  }
+  .ticketsTable thead tr {
+    display: none;
+  }
+  .ticketsTable td {
+    text-align: center;
+    position: relative;
+  }
+  .ticketsTable td:before {
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-title);
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .subHeadings {
+    @include montserrat-medium;
+  }
+
+  .input {
+    width: 35%;
+  }
+
+  .textRight {
+    @include montserrat-medium;
+    color: #439343;
+  }
 }

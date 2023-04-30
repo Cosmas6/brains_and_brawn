@@ -120,8 +120,10 @@ export default function Home() {
     const totalDays = Math.ceil(difference / (1000 * 60 * 60 * 24));
 
     if (difference <= 0) {
-      clearInterval(interval);
-      countdownTimer.innerHTML = "Event has started!";
+      setTimeValues((prevState) => ({
+        ...prevState,
+        eventStarted: true,
+      }));
       return;
     }
 
@@ -144,12 +146,12 @@ export default function Home() {
       hoursPercentage,
       minutesPercentage,
       secondsPercentage,
+      eventStarted: false,
     });
   }
 
   function useInterval(callback, delay) {
     const savedCallback = useRef();
-    const interval = useRef();
 
     useEffect(() => {
       savedCallback.current = callback;
@@ -164,15 +166,9 @@ export default function Home() {
         return () => clearInterval(id);
       }
     }, [delay]);
-
-    return interval;
   }
 
-  function useCountdown() {
-    const { interval } = useInterval(updateCountdown, 1000);
-  }
-
-  useCountdown();
+  useInterval(updateCountdown, 1000);
 
   const smoothScrollTo = (target) => {
     const targetElement = document.querySelector(target);
@@ -212,41 +208,47 @@ export default function Home() {
           ref={countdownTimerRef}
           className={styles.countdownTimer}
         >
-          <div className={screenSize <= 0.7 ? "" : styles.topRow}>
-            {createCircularProgressBar(
-              1 - timeValues.daysPercentage,
-              "D",
-              timeValues.days,
-              screenSize
-            )}
-          </div>
-          <div className={styles.divider}>|</div>
-          <div className={screenSize <= 0.7 ? "" : styles.topRow}>
-            {createCircularProgressBar(
-              1 - timeValues.hoursPercentage,
-              "H",
-              timeValues.hours,
-              screenSize
-            )}
-          </div>
-          <div className={styles.divider}>|</div>
-          <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
-            {createCircularProgressBar(
-              1 - timeValues.minutesPercentage,
-              "M",
-              timeValues.minutes,
-              screenSize
-            )}
-          </div>
-          <div className={styles.divider}>|</div>
-          <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
-            {createCircularProgressBar(
-              1 - timeValues.secondsPercentage,
-              "S",
-              timeValues.seconds,
-              screenSize
-            )}
-          </div>
+          {timeValues.eventStarted ? (
+            <div className={styles.eventStartedMessage}>Event has started!</div>
+          ) : (
+            <>
+              <div className={screenSize <= 0.7 ? "" : styles.topRow}>
+                {createCircularProgressBar(
+                  1 - timeValues.daysPercentage,
+                  "D",
+                  timeValues.days,
+                  screenSize
+                )}
+              </div>
+              <div className={styles.divider}>|</div>
+              <div className={screenSize <= 0.7 ? "" : styles.topRow}>
+                {createCircularProgressBar(
+                  1 - timeValues.hoursPercentage,
+                  "H",
+                  timeValues.hours,
+                  screenSize
+                )}
+              </div>
+              <div className={styles.divider}>|</div>
+              <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
+                {createCircularProgressBar(
+                  1 - timeValues.minutesPercentage,
+                  "M",
+                  timeValues.minutes,
+                  screenSize
+                )}
+              </div>
+              <div className={styles.divider}>|</div>
+              <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
+                {createCircularProgressBar(
+                  1 - timeValues.secondsPercentage,
+                  "S",
+                  timeValues.seconds,
+                  screenSize
+                )}
+              </div>
+            </>
+          )}
         </div>
         <div className={styles.ctaButton}>
           <Link href="/tickets/ticketPage" onClick={handleClick}>
