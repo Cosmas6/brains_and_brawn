@@ -42,19 +42,19 @@ const ImageCard = ({ title, imgSrc }) => {
 
 export default function EventCarousel() {
   return (
-    <div className={styles.eventCarouselContainer}>
+    <div className={styles.eventCarouselContainer} id="eventCarousel">
       <div className={styles.carouselText}>
         <h1>Come Explore with Our Team of Fun-Seekers!</h1>
         <p>
-          We're not just a team building company, we're a community of
-          adventure-seekers! Get to know us and see what makes us stand out.
+          We're not just a team building company, we're a community full of
+          fun-loving adventurers! Get to know us and see what makes us stand out.
         </p>
       </div>
 
       <div className={styles.carouselContainer}>
         <Carousel>
           <ImageCard imgSrc={carouselImage} title="Image 1" />
-          <ImageCard imgSrc={carouselImage} title="Image 2" />
+          <ImageCard imgSrc={carouselImage}f title="Image 2" />
           <ImageCard imgSrc={carouselImage} title="Image 3" />
         </Carousel>
       </div>

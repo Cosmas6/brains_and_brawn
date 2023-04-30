@@ -23,7 +23,7 @@
     font-size: 3rem;
     font-weight: bold;
 
-    color: #658a0f; 
+    color: #658a0f;
     @include montserrat-bold;
   }
   p {
@@ -42,7 +42,6 @@
   padding: 10px 20px;
   width: 100%;
   align-self: flex-start;
-  margin-bottom: 4rem;
 }
 
 .emailInput {
@@ -80,6 +79,36 @@
     background-color: transparent;
     color: #0f8a55;
     border: 1px solid #0f8a55;
+  }
+}
+
+.flashingArrow {
+  display: none;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  animation: flashing 1.5s infinite alternate;
+  cursor: pointer;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #0f8a55;
+  margin-top: 10px;
+}
+
+@keyframes flashing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -242,6 +271,11 @@
     }
   }
 
+  .subscribeButton {
+    font-size: 0.5rem;
+    padding: 0.3rem 0.8rem;
+  }
+
   .parallaxImageContainer {
     width: 95%;
     position: static;
@@ -255,6 +289,11 @@
   .card {
     width: 180px;
     min-width: 250px;
+  }
+
+  .CardsWrapper {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 
   .cardContent {
@@ -355,6 +394,10 @@
 @media screen and (max-width: 991px) {
   .halfScreenSection {
     flex-direction: column-reverse;
+  }
+
+  .flashingArrow {
+    display: block;
   }
 }
 

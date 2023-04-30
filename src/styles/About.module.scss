@@ -27,7 +27,7 @@
 
 .aboutHeading {
   text-align: center;
-  padding: 5rem 0;
+  padding: 5rem 0 2rem 0;
   font-size: 3rem;
   color: #c96516;
   font-weight: 700;
@@ -39,7 +39,7 @@
   justify-content: center;
   align-items: center;
   text-align: left;
-  margin: 30px 30px;
+  margin: 30px 30px 5px 30px;
   font-weight: 600;
   font-size: 1.5rem;
   margin-bottom: 100px;
@@ -51,7 +51,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 500px;
+  min-height: 350px;
   margin: 0 auto;
   background: url(/images/aboutImage.jpg);
   background-size: cover;
@@ -68,6 +68,39 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0.4;
+  }
+}
+
+.flashingArrow {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  animation: flashing 1.5s infinite alternate;
+  cursor: pointer;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #0f8a55;
+  margin-top: 10px;
+}
+
+@keyframes flashing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -108,8 +141,6 @@
     }
   }
 
-  
-
   .bgImageContainer {
     min-height: 250px;
   }
@@ -134,7 +165,7 @@
   }
 
   .aboutDescription {
-    margin: 50px 50px;
+    margin: 50px 50px 5px 50px;
   }
 
   .heroImage {
@@ -161,7 +192,7 @@
   }
 
   .aboutDescription {
-    margin: 70px 70px;
+    margin: 70px 70px 5px 70px;
   }
 }
 
@@ -179,8 +210,12 @@
     width: 100%;
   }
 
+  .aboutHeading {
+    padding: 3rem 0rem;
+  }
+
   .aboutDescription {
-    margin: 50px 50px;
+    margin: 50px 50px 5px 50px;
   }
 }
 
@@ -193,14 +228,18 @@
     }
   }
 
+  .aboutHeading {
+    padding: 3rem 0rem;
+  }
+
   .aboutDescription {
-    margin: 70px 70px;
+    margin: 70px 70px 5px 70px;
   }
 }
 
 /* Large Desktop */
 @media screen and (min-width: 1681px) {
   .aboutDescription {
-    margin: 100px 100px;
+    margin: 100px 100px 5px 100px;
   }
 }

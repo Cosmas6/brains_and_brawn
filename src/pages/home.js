@@ -14,6 +14,21 @@ export default function Home() {
   console.log(screenSize);
   const router = useRouter();
 
+  const fadeInUp = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   const handleClick = async () => {
     setIsLoading(true);
   };
@@ -114,7 +129,7 @@ export default function Home() {
   }
 
   function updateCountdown() {
-    const eventDate = new Date("2023-04-29 23:59:59"); // replace with your event date
+    const eventDate = new Date("2023-05-30 23:59:59"); // replace with your event date
     const currentDate = new Date();
     const difference = eventDate.getTime() - currentDate.getTime();
     const totalDays = Math.ceil(difference / (1000 * 60 * 60 * 24));
@@ -203,53 +218,70 @@ export default function Home() {
           Building Stronger Bonds and Boosting Productivity
         </h2> */}
         <h2 className={styles.eventName}>[Latest Event Name:]</h2>
-        <div
+        <motion.div
           id="countdown-timer"
           ref={countdownTimerRef}
           className={styles.countdownTimer}
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
         >
           {timeValues.eventStarted ? (
             <div className={styles.eventStartedMessage}>Event has started!</div>
           ) : (
             <>
               <div className={screenSize <= 0.7 ? "" : styles.topRow}>
-                {createCircularProgressBar(
-                  1 - timeValues.daysPercentage,
-                  "D",
-                  timeValues.days,
-                  screenSize
-                )}
+                <motion.div variants={fadeInUp}>
+                  {createCircularProgressBar(
+                    1 - timeValues.daysPercentage,
+                    "D",
+                    timeValues.days,
+                    screenSize
+                  )}
+                </motion.div>
               </div>
-              <div className={styles.divider}>|</div>
+              <motion.div className={styles.divider} variants={fadeInUp}>
+                :
+              </motion.div>
               <div className={screenSize <= 0.7 ? "" : styles.topRow}>
-                {createCircularProgressBar(
-                  1 - timeValues.hoursPercentage,
-                  "H",
-                  timeValues.hours,
-                  screenSize
-                )}
+                <motion.div variants={fadeInUp}>
+                  {createCircularProgressBar(
+                    1 - timeValues.hoursPercentage,
+                    "H",
+                    timeValues.hours,
+                    screenSize
+                  )}
+                </motion.div>
               </div>
-              <div className={styles.divider}>|</div>
+              <motion.div className={styles.divider} variants={fadeInUp}>
+                :
+              </motion.div>
               <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
-                {createCircularProgressBar(
-                  1 - timeValues.minutesPercentage,
-                  "M",
-                  timeValues.minutes,
-                  screenSize
-                )}
+                <motion.div variants={fadeInUp}>
+                  {createCircularProgressBar(
+                    1 - timeValues.minutesPercentage,
+                    "M",
+                    timeValues.minutes,
+                    screenSize
+                  )}
+                </motion.div>
               </div>
-              <div className={styles.divider}>|</div>
+              <motion.div className={styles.divider} variants={fadeInUp}>
+                :
+              </motion.div>
               <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
-                {createCircularProgressBar(
-                  1 - timeValues.secondsPercentage,
-                  "S",
-                  timeValues.seconds,
-                  screenSize
-                )}
+                <motion.div variants={fadeInUp}>
+                  {createCircularProgressBar(
+                    1 - timeValues.secondsPercentage,
+                    "S",
+                    timeValues.seconds,
+                    screenSize
+                  )}
+                </motion.div>
               </div>
             </>
           )}
-        </div>
+        </motion.div>
         <div className={styles.ctaButton}>
           <Link href="/tickets/ticketPage" onClick={handleClick}>
             {isLoading ? (
@@ -269,7 +301,7 @@ export default function Home() {
               smoothScrollTo("#aboutContainer");
             }}
           >
-            <div className={styles.text}>Learn More</div>
+            <div className={styles.text}>About Us</div>
             <div className={styles.arrow}></div>
           </div>
         </div>

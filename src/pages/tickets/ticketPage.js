@@ -161,6 +161,18 @@ export default function TicketPage() {
               </label>
               <button className={styles.subscribeButton}>Subscribe</button>
             </div>
+            <div
+              className={styles.flashingArrow}
+              onClick={() =>
+                window.scrollTo({
+                  top: document.querySelector(`.${styles.ticketSection}`)
+                    .offsetTop,
+                  behavior: "smooth",
+                })
+              }
+            >
+              <div className={styles.arrow}></div>
+            </div>
           </div>
           <div className={`col-lg-6 ${styles.imageColumn}`}>
             <div className={styles.parallaxImageContainer}>
