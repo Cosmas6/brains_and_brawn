@@ -28,10 +28,21 @@
   margin: 0 auto;
 }
 
+.customDotSize li button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.customDotSize li button:before {
+  font-size: 20px;
+}
+
 .imageContainer {
-  max-width: 700px;
-  max-height: 500px;
-  margin: 0px auto;
+  max-width: 1000px;
+  max-height: 700px;
+  margin: 20px auto;
+  
   img {
     width: 100%;
     height: 100%;

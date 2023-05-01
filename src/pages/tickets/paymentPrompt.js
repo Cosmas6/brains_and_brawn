@@ -1,9 +1,12 @@
 import styles from "./css/paymentPrompt.module.scss";
 
+
 export default function PaymentPrompt({ amount, onGoBack }) {
   const handlePayment = () => {
     // Add your payment handling logic here
   };
+
+
 
   return (
     <div className={styles.paymentPrompt}>
@@ -14,15 +17,12 @@ export default function PaymentPrompt({ amount, onGoBack }) {
       </button>
       <h2>Payment Instructions</h2>
       <ul className={styles.instructionsList}>
+        <li>Fill in necessary information before proceeding.</li>
         <li>
-          Click on the "Send Request to Phone" button to generate a payment
-          request on your phone.
+          Click "Send Request to Phone" for a payment request, then enter your
+          MPESA PIN.
         </li>
-        <li>Enter your MPESA PIN on your phone to complete the payment.</li>
-        <li>
-          You will receive your receipt from MPESA and an email payment
-          confirmation from us.
-        </li>
+        <li>Get your MPESA receipt and our email payment confirmation.</li>
       </ul>
       <div className={styles.inputContainer}>
         <input
@@ -39,7 +39,9 @@ export default function PaymentPrompt({ amount, onGoBack }) {
           required
         />
       </div>
-      <p>Total: {amount}</p>
+      <p className={styles.total}>
+        Total: <span>{amount}/=</span>
+      </p>
       <button onClick={handlePayment} className={styles.sendButton}>
         <span>Send Request to Phone</span>
       </button>

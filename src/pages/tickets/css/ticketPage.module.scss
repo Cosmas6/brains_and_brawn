@@ -161,6 +161,11 @@
   }
 }
 
+.slickSlider {
+  margin-bottom: 20px;
+}
+
+
 .arrowNavigation {
   display: flex;
   align-items: center;
@@ -251,6 +256,16 @@
     background-color: #147c14;
     color: white;
   }
+}
+
+.customDotSize li button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.customDotSize li button:before {
+  font-size: 20px;
 }
 
 /* Mobile Portrait */

@@ -30,6 +30,7 @@ const pageVariants = {
 const Carousel = ({ children, openModal }) => {
   const settings = {
     dots: true,
+    dotsClass: `slick-dots ${styles.customDotSize}`,
     speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 3,

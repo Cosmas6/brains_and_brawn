@@ -28,9 +28,11 @@
 
   @keyframes fadeIn {
     0% {
+      opacity: 0;
       background-image: none;
     }
     100% {
+      opacity: 1;
       background-image: url(/images/heroBackground.jpeg);
     }
   }
@@ -77,7 +79,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 1rem;
   }
 
   span {
@@ -188,7 +189,6 @@
     div {
       width: 100px;
       text-align: center;
-      margin: 1.5rem 1.5rem;
     }
 
     .top-row {
@@ -235,7 +235,7 @@
   .countdownTimer {
     div {
       width: 100px;
-      margin: 10px 0px;
+      height: 150px;
     }
 
     span {
@@ -272,7 +272,7 @@
   .countdownTimer {
     div {
       width: 100px;
-      margin: 50px 20px;
+      margin: 0 1rem;
     }
 
     span {
@@ -304,6 +304,12 @@
     margin: 30px auto;
   }
 
+  .countdownTimer {
+    div {
+      margin: 0 1rem;
+    }
+  }
+
   .eventStartedMessage {
     font-size: 2.5rem;
   }
@@ -311,6 +317,11 @@
 
 /* Tablet Landscape */
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
+  .countdownTimer {
+    div {
+      margin: 0 1rem;
+    }
+  }
   .eventStartedMessage {
     font-size: 2.5rem;
   }
@@ -318,6 +329,11 @@
 
 /* Desktop */
 @media screen and (min-width: 1280px) and (max-width: 1680px) {
+  .countdownTimer {
+    div {
+      margin: 0 1rem;
+    }
+  }
   .eventStartedMessage {
     font-size: 2.5rem;
   }
@@ -325,6 +341,11 @@
 
 /* Large Desktop */
 @media screen and (min-width: 1681px) {
+  .countdownTimer {
+    div {
+      margin: 0 1rem;
+    }
+  }
   .eventStartedMessage {
     font-size: 2.5rem;
   }

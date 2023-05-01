@@ -38,9 +38,9 @@ export default function TicketSale({
             </div>
           </div>
           <div className="col-lg-6">
-            <div class={styles.date}>
-              <div class={styles.month}>Apr</div>
-              <div class={styles.day}>29</div>
+            <div className={styles.date}>
+              <div className={styles.month}>Apr</div>
+              <div className={styles.day}>29</div>
             </div>
 
             <div className={styles.text}>
@@ -123,7 +123,7 @@ export default function TicketSale({
             </tr>
             <tr>
               <td className={styles.subHeadings}>Discount</td>
-              <td colspan="2" className={styles.textRight}>
+              <td colSpan="2" className={styles.textRight}>
                 KES. 0
               </td>
             </tr>
@@ -131,7 +131,7 @@ export default function TicketSale({
           <tfoot>
             <tr>
               <td className={styles.subHeadings}>Total</td>
-              <td colspan="2" className={styles.textRight}>
+              <td colSpan="2" className={styles.textRight}>
                 KES. {grandTotal}{" "}
               </td>
             </tr>
