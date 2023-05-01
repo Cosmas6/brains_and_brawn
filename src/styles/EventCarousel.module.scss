@@ -9,12 +9,12 @@
   h1 {
     padding-top: 100px;
     color: #7d3b07;
-    font-size: 3rem;
+    font-size: 2.5rem;
     @include montserrat-medium;
   }
   p {
     @include montserrat-extra-light;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
   }
 }
@@ -117,7 +117,7 @@
     }
 
     p {
-      margin: 70px 70px;
+      margin: 45px 70px;
     }
   }
 }
