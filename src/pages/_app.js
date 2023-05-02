@@ -1,5 +1,6 @@
 import "@/styles/globals.scss";
 import Navbar from "../components/Navbar";
+import React, { useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -12,6 +13,17 @@ import "../styles/animations.scss";
 
 export default function App({ Component, pageProps, router }) {
   config.autoAddCss = false;
+  function applySmoothScrollPolyfill() {
+    if (typeof window !== "undefined") {
+      const smoothscroll = require("smoothscroll-polyfill");
+      smoothscroll.polyfill();
+    }
+  }
+
+  useEffect(() => {
+    applySmoothScrollPolyfill();
+  }, []);
+
   return (
     <>
       <main>

@@ -9,6 +9,7 @@ body {
   overflow-y: overlay;
   box-sizing: border-box;
 
+
   ::-webkit-scrollbar {
     display: none;
   }
@@ -43,6 +44,7 @@ body {
 /* Base font size */
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 /* Increase font size for small screens */

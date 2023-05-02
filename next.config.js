@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ["media.istockphoto.com"],
   },
+  output: "standalone",
 };
 
 // next.config.js

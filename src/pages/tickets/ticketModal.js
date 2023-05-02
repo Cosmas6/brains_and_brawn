@@ -3,9 +3,9 @@ import styles from "./css/Modal.module.scss";
 import TicketSale from "./ticketSale";
 import PaymentPrompt from "./paymentPrompt";
 
-export default function Modal({ closeModal, ticketInfo, scrollPosition }) {
+export default function Modal({ closeModal, ticketInfo = {}, scrollPosition }) {
   const [step, setStep] = useState(1);
-  const { title, description, imgSrc } = ticketInfo;
+  const { title = "", description = "", imgSrc = "" } = ticketInfo;
   const [earlyBirdQuantity, setEarlyBirdQuantity] = useState(0);
   const [gateQuantity, setGateQuantity] = useState(0);
   const [grandTotal, setGrandTotal] = useState(0);
