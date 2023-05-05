@@ -1,6 +1,6 @@
-import "@/styles/globals.scss";
+import "../styles/globals.scss";
 import Navbar from "../components/Navbar";
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";

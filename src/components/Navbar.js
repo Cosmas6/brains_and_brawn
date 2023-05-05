@@ -7,11 +7,11 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
-import logoImage from "public/PowerPlay.png";
-import homeImage from "public/images/homeImage.png";
-import eventImage from "public/images/eventImage.png";
-import aboutNavImage from "public/images/aboutNavImage.jpg";
-import contactImage from "public/images/contactImage.png";
+import logoImage from "/public/PowerPlay.png";
+import homeImage from "/public/images/homeImage.png";
+import eventImage from "/public/images/eventImage.png";
+import aboutNavImage from "/public/images/aboutNavImage.jpg";
+import contactImage from "/public/images/contactImage.png";
 import styles from "./css/Navbar.module.scss";
 
 export default function Navbar() {

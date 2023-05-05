@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import styles from "../styles/EventCarousel.module.scss";
-import carouselImage from "public/images/aboutImage.jpg";
+import carouselImage from "/public/images/aboutImage.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

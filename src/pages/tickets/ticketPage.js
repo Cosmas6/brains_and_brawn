@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import ticketHero from "public/images/ticketHeroImage.png";
-import ticketEvent from "public/images/ticketEvent.jpg";
+import ticketHero from "/public/images/ticketHeroImage.png";
+import ticketEvent from "/public/images/ticketEvent.jpg";
 import { motion } from "framer-motion";
 import styles from "./css/ticketPage.module.scss";
 import Modal from "./ticketModal";

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import coreImage from "../../public/images/coreImage.png";
-import styles from "@/styles/CoreValues.module.scss";
+import styles from "../styles/CoreValues.module.scss";
 
 export default function CoreValues() {
   return (

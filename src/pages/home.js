@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "@/styles/Home.module.scss";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import styles from "../styles/Home.module.scss";
+import LoadingSpinner from "../components/LoadingSpinner";
 import { motion } from "framer-motion";
-import logoImage from "public/images/PowerPlayLogo.png";
+import logoImage from "/public/images/PowerPlayLogo.png";
 
 export default function Home() {
   const countdownTimerRef = useRef();

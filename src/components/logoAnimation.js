@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import styles from "@/styles/LogoAnimation.module.scss";
+import styles from "../styles/LogoAnimation.module.scss";
 import Logo from "../../public/b&b.png";
 
 export default function logoAnimation({ onSlideAnimationEnd }) {
