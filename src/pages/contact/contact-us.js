@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./css/Contact.module.scss";
 import Link from "next/link";
@@ -8,6 +9,8 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 const pageVariants = {
   initial: {
@@ -28,7 +31,45 @@ const pageVariants = {
   },
 };
 
+emailjs.init("N_amKN9QOquvFeQUQ");
+
 export default function ContactUs() {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isSent, setIsSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormState({ ...formState, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSent(false);
+    setIsLoading(true);
+
+    try {
+      const templateParams = {
+        from_name: formState.name,
+        from_email: formState.email,
+        subject: formState.subject,
+        message: formState.message,
+      };
+
+      await emailjs.send("cosmas-email", "powerplay-template", templateParams);
+      setIsSent(true);
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Failed to send email. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
   return (
     <motion.div
       initial="initial"
@@ -45,32 +86,60 @@ export default function ContactUs() {
             <div className={`${styles.leftColumn} col-lg-6`}>
               <div className={styles.contactForm}>
                 <p>Feel free to contact us with any questions or concerns.</p>
-
-                <div className={styles.inputField}>
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    required
-                    className={styles.formControl}
-                  />
-                </div>
-                <div className={styles.inputField}>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                    className={styles.formControl}
-                  />
-                </div>
-                <div className={styles.inputField}>
-                  <textarea
-                    type="text"
-                    placeholder="Message"
-                    required
-                    className={`${styles.formControl} ${styles.formControlMessage}`}
-                  ></textarea>
-                </div>
-                <button className={styles.sendButton}>Send</button>
+                <form onSubmit={handleSubmit}>
+                  <div className={styles.inputField}>
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      name="name"
+                      value={formState.name}
+                      onChange={handleInputChange}
+                      required
+                      className={styles.formControl}
+                    />
+                  </div>
+                  <div className={styles.inputField}>
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      name="email"
+                      value={formState.email}
+                      onChange={handleInputChange}
+                      required
+                      className={styles.formControl}
+                    />
+                  </div>
+                  <div className={styles.inputField}>
+                    <input
+                      type="text"
+                      placeholder="Subject"
+                      name="subject"
+                      value={formState.subject}
+                      onChange={handleInputChange}
+                      className={styles.formControl}
+                    />
+                  </div>
+                  <div className={styles.inputField}>
+                    <textarea
+                      type="text"
+                      placeholder="Message"
+                      name="message"
+                      value={formState.message}
+                      onChange={handleInputChange}
+                      required
+                      className={`${styles.formControl} ${styles.formControlMessage}`}
+                    ></textarea>
+                  </div>
+                  <button className={styles.sendButton} type="submit">
+                    {isLoading ? (
+                      <LoadingSpinner />
+                    ) : isSent ? (
+                      "Sent successfully"
+                    ) : (
+                      "Send"
+                    )}
+                  </button>
+                </form>
               </div>
             </div>
             <div className={`${styles.socialMediaSection} col-lg-6`}>

@@ -33,7 +33,7 @@
     font-size: 3rem;
     margin-bottom: 5rem;
     margin-left: 5rem;
-    color: #f59c0f;
+    color: #ffffff;
     @include montserrat-bold;
   }
 }
@@ -83,6 +83,9 @@
 }
 
 .sendButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #147c14;
   border: none;
   border-radius: 40px;
@@ -94,12 +97,12 @@
   @include montserrat-regular;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #8a420f;
   }
 }
 
 .socialMediaSection {
-  background-color: #8A420F;
+  background-color: #8a420f;
   border-radius: 20px;
   margin-top: -100px;
   z-index: 5;

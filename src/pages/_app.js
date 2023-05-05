@@ -1,4 +1,5 @@
 import "../styles/globals.scss";
+import Head from "next/head";
 import Navbar from "../components/Navbar";
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
@@ -27,6 +28,15 @@ export default function App({ Component, pageProps, router }) {
   return (
     <>
       <main>
+        <Head>
+          <title>PowerPlay</title>
+          <meta
+            name="description"
+            content="Building Stronger Teams, One Adventure at a Time"
+          />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <Navbar />
         <AnimatePresence mode="wait">
           <Component {...pageProps} key={router.route} />
