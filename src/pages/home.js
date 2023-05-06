@@ -193,15 +193,7 @@ export default function Home() {
   };
 
   return (
-    <motion.section
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
-      exit={{
-        opacity: 0,
-      }}
-      transition={{ duration: 0.5 }}
-      className={styles.heroContainer}
-    >
+    <div className={styles.heroContainer}>
       <div className={styles.textContainer}>
         <div className={styles.logoImageContainer}>
           <Image
@@ -302,6 +294,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </div>
   );
 }

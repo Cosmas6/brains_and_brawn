@@ -10,11 +10,11 @@ import Link from "next/link";
 import logoImage from "/public/PowerPlay.png";
 import homeImage from "/public/images/homeImage.png";
 import eventImage from "/public/images/eventImage.png";
-import aboutNavImage from "/public/images/aboutNavImage.jpg";
+import gamesImage from "/public/images/games/obstacle-ring.png";
 import contactImage from "/public/images/contactImage.png";
 import styles from "./css/Navbar.module.scss";
 
-export default function Navbar() {
+export default function Navbar({ setIsLoading }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [loadingNavLink, setLoadingNavLink] = useState(null);
   const [currentImage, setCurrentImage] = useState("");
@@ -34,6 +34,7 @@ export default function Navbar() {
 
   const handleNavLinkClick = async (route) => {
     setLoadingNavLink(route);
+    setIsLoading(true);
     await router.push(route);
     setIsExpanded(false);
     setLoadingNavLink(null);
@@ -100,7 +101,7 @@ export default function Navbar() {
           </li>
           <li
             className={styles.navItem}
-            onMouseEnter={() => handleNavHover(aboutNavImage)}
+            onMouseEnter={() => handleNavHover(gamesImage)}
             onMouseLeave={() => handleNavHover("")}
           >
             <Link

@@ -7,7 +7,7 @@
   padding: 0;
   position: fixed;
   z-index: 10;
-  align-items: center; // Added
+  align-items: center;
   background-color: white;
   width: 100%;
 }
@@ -41,8 +41,8 @@
 }
 
 .navLink.active {
-  background-color: #28a745; // Added, you can replace this with your desired green color
-  color: #ffffff; // Added, you can replace this with your desired text color
+  background-color: #28a745;
+  color: #ffffff;
 }
 
 .gameSectionContainer {
@@ -52,7 +52,7 @@
 .gameCategory {
   padding: 2rem;
   text-align: center;
-  padding-top: 12rem; // Added
+  padding-top: 12rem;
 }
 
 .categoryTitle {
@@ -76,21 +76,29 @@
   width: calc(33.333% - 2rem);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
-  display: flex; // Added
-  flex-direction: column; // Added
-  transition: top 0.3s ease, box-shadow 0.5s ease; // Updated transition property
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  transition: top 0.3s ease, box-shadow 0.5s ease;
+  overflow: hidden;
   img {
     display: block;
-    padding: 0.2rem;
     width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 5px;
-    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
   }
   &:hover {
+    
     top: -5px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+
+    .gameTitle {
+
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -98,7 +106,16 @@
   font-size: 1.25rem;
   font-weight: bold;
   color: #333;
+  position: absolute;
+  top: 50%;
+  transform: scale(1);
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  z-index: 2;
   @include montserrat-regular;
+  transition: transform 0.3s ease;
 }
 
 @media screen and (max-width: 1024px) {
@@ -123,6 +140,6 @@
   }
 
   .gameCategory {
-    padding-top: 11rem; // Added
+    padding-top: 11rem;
   }
 }

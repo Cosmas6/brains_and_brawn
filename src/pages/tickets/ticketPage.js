@@ -3,29 +3,8 @@ import Slider from "react-slick";
 import Image from "next/image";
 import ticketHero from "/public/images/ticketHeroImage.png";
 import ticketEvent from "/public/images/ticketEvent.jpg";
-import { motion } from "framer-motion";
 import styles from "./css/ticketPage.module.scss";
 import Modal from "./ticketModal";
-import TicketSale from "./ticketSale";
-
-const pageVariants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-    },
-  },
-
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
 
 const Carousel = ({ children, openModal }) => {
   const settings = {
@@ -136,97 +115,90 @@ export default function TicketPage() {
     );
   }
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={pageVariants}
-    >
-      <div className={styles.ticketPageContainer}>
-        <div className={`row ${styles.halfScreenSection}`}>
-          <div className={`col-lg-6 ${styles.textColumn}`}>
-            <div className={styles.bigText}>
-              <h1>Teamwork. Adventure. Book Now.</h1>
-              <p>
-                Ready to Explore? Reserve Tickets Below 🎟️ or Stay Updated on
-                our Latest Events and Subscribe today!🌟
-              </p>
-            </div>
-            <div className={styles.subscribeEmail}>
-              <label htmlFor="emailInput" className={styles.emailInputLabel}>
-                <input
-                  type="email"
-                  placeholder="Please Enter Email address"
-                  className={styles.emailInput}
-                />
-              </label>
-              <button className={styles.subscribeButton}>Subscribe</button>
-            </div>
-            <div
-              className={styles.flashingArrow}
-              onClick={() =>
-                window.scrollTo({
-                  top: document.querySelector(`.${styles.ticketSection}`)
-                    .offsetTop,
-                  behavior: "smooth",
-                })
-              }
-            >
-              <div className={styles.arrow}></div>
-            </div>
+    <div className={styles.ticketPageContainer}>
+      <div className={`row ${styles.halfScreenSection}`}>
+        <div className={`col-lg-6 ${styles.textColumn}`}>
+          <div className={styles.bigText}>
+            <h1>Teamwork. Adventure. Book Now.</h1>
+            <p>
+              Ready to Explore? Reserve Tickets Below 🎟️ or Stay Updated on our
+              Latest Events and Subscribe today!🌟
+            </p>
           </div>
-          <div className={`col-lg-6 ${styles.imageColumn}`}>
-            <div className={styles.parallaxImageContainer}>
-              <Image
-                src={ticketHero}
-                className={styles.parallaxImage}
-                alt="Example Image"
+          <div className={styles.subscribeEmail}>
+            <label htmlFor="emailInput" className={styles.emailInputLabel}>
+              <input
+                type="email"
+                placeholder="Please Enter Email address"
+                className={styles.emailInput}
               />
-            </div>
+            </label>
+            <button className={styles.subscribeButton}>Subscribe</button>
+          </div>
+          <div
+            className={styles.flashingArrow}
+            onClick={() =>
+              window.scrollTo({
+                top: document.querySelector(`.${styles.ticketSection}`)
+                  .offsetTop,
+                behavior: "smooth",
+              })
+            }
+          >
+            <div className={styles.arrow}></div>
           </div>
         </div>
-        <section className={styles.ticketSection}>
-          <div className={`container ${styles.ticketHeading}`}>
-            <h2>Our Exclusive Tickets</h2>
+        <div className={`col-lg-6 ${styles.imageColumn}`}>
+          <div className={styles.parallaxImageContainer}>
+            <Image
+              src={ticketHero}
+              className={styles.parallaxImage}
+              alt="Example Image"
+            />
           </div>
-          <div className={`container ${styles.CardsWrapper}`}>
-            <div className={` ${styles.ticketCards}`}>
-              <Carousel openModal={openModal}>
-                <TicketCard
-                  title="Ticket 1"
-                  description="Sample description"
-                  imgSrc={ticketEvent}
-                />
-                <TicketCard
-                  title="Ticket 2"
-                  description="Sample description"
-                  imgSrc={ticketEvent}
-                />
-                <TicketCard
-                  title="Ticket 3"
-                  description="Sample description"
-                  imgSrc={ticketEvent}
-                />
-                <TicketCard
-                  title="Ticket 4"
-                  description="Sample description"
-                  imgSrc={ticketEvent}
-                />
-                <TicketCard
-                  title="Ticket 5"
-                  description="Sample description"
-                  imgSrc={ticketEvent}
-                />
-                <TicketCard
-                  title="Ticket 6"
-                  description="Sample description"
-                  imgSrc={ticketEvent}
-                />
-              </Carousel>
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
-    </motion.div>
+      <section className={styles.ticketSection}>
+        <div className={`container ${styles.ticketHeading}`}>
+          <h2>Our Exclusive Tickets</h2>
+        </div>
+        <div className={`container ${styles.CardsWrapper}`}>
+          <div className={` ${styles.ticketCards}`}>
+            <Carousel openModal={openModal}>
+              <TicketCard
+                title="Ticket 1"
+                description="Sample description"
+                imgSrc={ticketEvent}
+              />
+              <TicketCard
+                title="Ticket 2"
+                description="Sample description"
+                imgSrc={ticketEvent}
+              />
+              <TicketCard
+                title="Ticket 3"
+                description="Sample description"
+                imgSrc={ticketEvent}
+              />
+              <TicketCard
+                title="Ticket 4"
+                description="Sample description"
+                imgSrc={ticketEvent}
+              />
+              <TicketCard
+                title="Ticket 5"
+                description="Sample description"
+                imgSrc={ticketEvent}
+              />
+              <TicketCard
+                title="Ticket 6"
+                description="Sample description"
+                imgSrc={ticketEvent}
+              />
+            </Carousel>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
