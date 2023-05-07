@@ -6,6 +6,7 @@ import styles from "../styles/Home.module.scss";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { motion } from "framer-motion";
 import logoImage from "/public/images/PowerPlayLogo.png";
+import Layout from "../components/Layout";
 
 export default function Home() {
   const countdownTimerRef = useRef();
@@ -193,107 +194,111 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.heroContainer}>
-      <div className={styles.textContainer}>
-        <div className={styles.logoImageContainer}>
-          <Image
-            src={logoImage}
-            className={styles.logoImage}
-            alt="B&B Description Image"
-          />
-        </div>
-        {/* <h2 className={styles.subHeading}>
+    <Layout>
+      <div className={styles.heroContainer}>
+        <div className={styles.textContainer}>
+          <div className={styles.logoImageContainer}>
+            <Image
+              src={logoImage}
+              className={styles.logoImage}
+              alt="B&B Description Image"
+            />
+          </div>
+          {/* <h2 className={styles.subHeading}>
           Building Stronger Bonds and Boosting Productivity
         </h2> */}
-        <h2 className={styles.eventName}>[Latest Event Name:]</h2>
-        <motion.div
-          id="countdown-timer"
-          ref={countdownTimerRef}
-          className={styles.countdownTimer}
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-        >
-          {timeValues.eventStarted ? (
-            <div className={styles.eventStartedMessage}>Event has started!</div>
-          ) : (
-            <>
-              <div className={screenSize <= 0.7 ? "" : styles.topRow}>
-                <motion.div variants={fadeInUp}>
-                  {createCircularProgressBar(
-                    1 - timeValues.daysPercentage,
-                    "D",
-                    timeValues.days,
-                    screenSize
-                  )}
-                </motion.div>
-              </div>
-              <motion.div className={styles.divider} variants={fadeInUp}>
-                :
-              </motion.div>
-              <div className={screenSize <= 0.7 ? "" : styles.topRow}>
-                <motion.div variants={fadeInUp}>
-                  {createCircularProgressBar(
-                    1 - timeValues.hoursPercentage,
-                    "H",
-                    timeValues.hours,
-                    screenSize
-                  )}
-                </motion.div>
-              </div>
-              <motion.div className={styles.divider} variants={fadeInUp}>
-                :
-              </motion.div>
-              <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
-                <motion.div variants={fadeInUp}>
-                  {createCircularProgressBar(
-                    1 - timeValues.minutesPercentage,
-                    "M",
-                    timeValues.minutes,
-                    screenSize
-                  )}
-                </motion.div>
-              </div>
-              <motion.div className={styles.divider} variants={fadeInUp}>
-                :
-              </motion.div>
-              <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
-                <motion.div variants={fadeInUp}>
-                  {createCircularProgressBar(
-                    1 - timeValues.secondsPercentage,
-                    "S",
-                    timeValues.seconds,
-                    screenSize
-                  )}
-                </motion.div>
-              </div>
-            </>
-          )}
-        </motion.div>
-        <div className={styles.ctaButton}>
-          <Link href="/tickets/ticketPage" onClick={handleClick}>
-            {isLoading ? (
-              // Render the loading spinner component when isLoading is true
-              <LoadingSpinner />
-            ) : (
-              "Buy Tickets"
-            )}
-          </Link>
-        </div>
-        <div className={styles.learnMoreContainer}>
-          <div
-            className={styles.learnMore}
-            tabIndex="0"
-            role="link"
-            onClick={() => {
-              smoothScrollTo("#aboutContainer");
-            }}
+          <h2 className={styles.eventName}>[Latest Event Name:]</h2>
+          <motion.div
+            id="countdown-timer"
+            ref={countdownTimerRef}
+            className={styles.countdownTimer}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
           >
-            <div className={styles.text}>About Us</div>
-            <div className={styles.arrow}></div>
+            {timeValues.eventStarted ? (
+              <div className={styles.eventStartedMessage}>
+                Event has started!
+              </div>
+            ) : (
+              <>
+                <div className={screenSize <= 0.7 ? "" : styles.topRow}>
+                  <motion.div variants={fadeInUp}>
+                    {createCircularProgressBar(
+                      1 - timeValues.daysPercentage,
+                      "D",
+                      timeValues.days,
+                      screenSize
+                    )}
+                  </motion.div>
+                </div>
+                <motion.div className={styles.divider} variants={fadeInUp}>
+                  :
+                </motion.div>
+                <div className={screenSize <= 0.7 ? "" : styles.topRow}>
+                  <motion.div variants={fadeInUp}>
+                    {createCircularProgressBar(
+                      1 - timeValues.hoursPercentage,
+                      "H",
+                      timeValues.hours,
+                      screenSize
+                    )}
+                  </motion.div>
+                </div>
+                <motion.div className={styles.divider} variants={fadeInUp}>
+                  :
+                </motion.div>
+                <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
+                  <motion.div variants={fadeInUp}>
+                    {createCircularProgressBar(
+                      1 - timeValues.minutesPercentage,
+                      "M",
+                      timeValues.minutes,
+                      screenSize
+                    )}
+                  </motion.div>
+                </div>
+                <motion.div className={styles.divider} variants={fadeInUp}>
+                  :
+                </motion.div>
+                <div className={screenSize <= 0.7 ? "" : styles.bottomRow}>
+                  <motion.div variants={fadeInUp}>
+                    {createCircularProgressBar(
+                      1 - timeValues.secondsPercentage,
+                      "S",
+                      timeValues.seconds,
+                      screenSize
+                    )}
+                  </motion.div>
+                </div>
+              </>
+            )}
+          </motion.div>
+          <div className={styles.ctaButton}>
+            <Link href="/tickets/ticketPage" onClick={handleClick}>
+              {isLoading ? (
+                // Render the loading spinner component when isLoading is true
+                <LoadingSpinner />
+              ) : (
+                "Buy Tickets"
+              )}
+            </Link>
+          </div>
+          <div className={styles.learnMoreContainer}>
+            <div
+              className={styles.learnMore}
+              tabIndex="0"
+              role="link"
+              onClick={() => {
+                smoothScrollTo("#aboutContainer");
+              }}
+            >
+              <div className={styles.text}>About Us</div>
+              <div className={styles.arrow}></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
