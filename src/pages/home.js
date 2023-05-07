@@ -202,6 +202,7 @@ export default function Home() {
               src={logoImage}
               className={styles.logoImage}
               alt="B&B Description Image"
+              loading="lazy"
             />
           </div>
           {/* <h2 className={styles.subHeading}>
