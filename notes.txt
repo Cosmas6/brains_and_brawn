@@ -1,3 +1,0 @@
-className={`${
-          loaded ? `${styles.logoContainer} loaded` : `${styles.logoContainer}`
-        }`}
