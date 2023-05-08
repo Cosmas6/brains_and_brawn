@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Montserrat-ExtraBold";
+  src: url("/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("/fonts/Montserrat-Light.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraLight";
+  src: url("/fonts/Montserrat-ExtraLight.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat-Thin";
+  src: url("/fonts/Montserrat-Thin.ttf") format("truetype");
+  font-display: swap;
+}
+
+@mixin montserrat-extra-bold {
+  font-family: Montserrat-ExtraBold, sans-serif;
+  animation: fontFade 0.5s linear forwards;
+}
+
+@mixin montserrat-bold {
+  font-family: Montserrat-Bold, sans-serif;
+  animation: fontFade 0.5s linear forwards;
+}
+
+@mixin montserrat-medium {
+  font-family: Montserrat-Medium, sans-serif;
+  animation: fontFade 0.5s linear forwards;
+}
+
+@mixin montserrat-regular {
+  font-family: Montserrat-Regular, sans-serif;
+  animation: fontFade 0.5s linear forwards;
+}
+
+@mixin montserrat-light {
+  font-family: Montserrat-Light, sans-serif;
+  animation: fontFade 0.5s linear forwards;
+}
+
+@mixin montserrat-extra-light {
+  font-family: Montserrat-ExtraLight, sans-serif;
+  animation: fontFade 0.5s linear forwards;
+}
+
+@mixin montserrat-thin {
+  font-family: Montserrat-Thin, sans-serif;
+  animation: fontFade 0.5s linear forwards;
+}
+
+@keyframes fontFade {
+  0% {
+    font-family: sans-serif;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

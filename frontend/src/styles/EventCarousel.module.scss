@@ -1,0 +1,135 @@
+@import "../styles/font.scss";
+
+.eventCarouselContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.carouselText {
+  h1 {
+    padding-top: 100px;
+    color: #7d3b07;
+    font-size: 2.5rem;
+    @include montserrat-medium;
+  }
+  p {
+    @include montserrat-extra-light;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+.carouselContainer {
+  z-index: -1;
+}
+
+.slickSlider {
+  width: 80%;
+  height: inherit !important;
+  margin: 0 auto;
+}
+
+.customDotSize li button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.customDotSize li button:before {
+  font-size: 20px;
+}
+
+.imageContainer {
+  max-width: 1000px;
+  max-height: 700px;
+  margin: 20px auto;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+@media screen and (max-width: 460px) {
+  .carouselText {
+    h1 {
+      font-size: 1.5rem;
+      margin: 30px 30px;
+    }
+    p {
+      font-size: 1rem;
+      margin: 30px 30px;
+    }
+  }
+}
+
+@media screen and (min-width: 461px) and (max-width: 640px) {
+  .carouselText {
+    h1 {
+      margin: 30px 30px;
+    }
+    p {
+      margin: 30px 30px;
+    }
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (min-width: 641px) and (max-width: 767px) {
+  .carouselText {
+    h1 {
+      margin: 0 50px;
+    }
+    p {
+      margin: 50px 50px;
+    }
+  }
+}
+
+/* Tablet Portrait */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .carouselText {
+    h1 {
+      margin: 0 70px;
+    }
+    p {
+      margin: 70px 70px;
+    }
+  }
+}
+
+/* Tablet Landscape */
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+  .carouselText {
+    h1 {
+      margin: 0 50px;
+    }
+    p {
+      margin: 50px 50px;
+    }
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) and (max-width: 1680px) {
+  .carouselText {
+    h1 {
+      margin: 0 70px;
+    }
+
+    p {
+      margin: 45px 70px;
+    }
+  }
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1681px) {
+  .carouselText {
+    h1 {
+      margin: 0 100px;
+    }
+    p {
+      margin: 50px 100px;
+    }
+  }
+}

@@ -1,0 +1,268 @@
+@import "../../../styles//font.scss";
+
+// .contactSection {
+//   padding: 2rem 0;
+// }
+
+.heroBackground {
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  position: relative;
+  height: 250px;
+  background: url(/images/contactHero.jpg);
+  background-size: cover;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  z-index: 1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d0d0d;
+    opacity: 0.4;
+    z-index: -1;
+  }
+
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    margin-left: 5rem;
+    color: #ffffff;
+    @include montserrat-bold;
+  }
+}
+
+.leftColumn {
+  padding: 2rem 2rem;
+}
+
+.contactForm {
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    @include montserrat-regular;
+  }
+}
+
+.inputField {
+  position: relative;
+  margin-bottom: 2.5rem;
+  @include montserrat-light;
+
+  .formControl {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #000;
+    width: 100%;
+    outline: none;
+    padding: 0;
+    &:focus {
+      border-color: #147c14;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #000;
+    }
+  }
+
+  .formControlMessage {
+    white-space: pre-wrap;
+  }
+}
+
+.sendButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #147c14;
+  border: none;
+  border-radius: 40px;
+  color: #fff;
+  padding: 1rem 1rem;
+  width: 75%;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  @include montserrat-regular;
+
+  &:hover {
+    background-color: #8a420f;
+  }
+}
+
+.socialMediaSection {
+  background-color: #8a420f;
+
+  margin-top: -100px;
+  z-index: 5;
+}
+
+.socialMedia {
+  position: relative;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: inherit;
+
+  h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: white;
+    @include montserrat-bold;
+  }
+}
+
+.itemEmailPhone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+
+  .email,
+  .phone {
+    justify-content: space-between;
+    width: 50%;
+  }
+
+  .email {
+    font-size: 2.5rem;
+    text-align: right;
+    margin-right: 5rem;
+  }
+
+  .phone {
+    font-size: 2.5rem;
+    text-align: left;
+    margin-left: 5rem;
+  }
+}
+
+.socialMediaItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    width: 80px;
+  }
+
+  .socialMediaText {
+    font-size: 1.3rem;
+    color: white;
+    @include montserrat-regular;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .socialMediaSection {
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 640px) {
+  .heroBackground {
+    height: 200px;
+    h2 {
+      margin-bottom: 3rem;
+      margin-left: 1.5rem;
+      font-size: 3rem;
+    }
+  }
+
+  .sendButton {
+    width: 50%;
+  }
+  .socialMediaSection {
+    margin-top: 50px;
+  }
+
+  .socialMedia {
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  .socialMediaItem {
+    .socialMediaText {
+      font-size: 1.2rem;
+    }
+  }
+
+  .contactForm {
+    p {
+      justify-content: center;
+    }
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (min-width: 641px) and (max-width: 767px) {
+  .socialMedia {
+    padding-top: 2rem;
+  }
+
+  .socialMediaSection {
+    margin-top: 50px;
+  }
+}
+
+/* Tablet Portrait */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .heroBackground {
+    h2 {
+      font-size: 4rem;
+    }
+  }
+
+  .socialMediaSection {
+    margin-top: 50px;
+  }
+
+  .socialMedia {
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  .leftColumn {
+    padding-left: 0px; /* Adjust this value to control the gap between columns */
+    padding-right: 0px;
+  }
+}
+
+/* Tablet Landscape */
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) and (max-width: 1680px) {
+  .heroBackground {
+    height: 35vh;
+  }
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1681px) {
+  .heroBackground {
+    height: 35vh;
+  }
+}
