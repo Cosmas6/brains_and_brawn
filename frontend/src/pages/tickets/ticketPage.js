@@ -5,6 +5,7 @@ import ticketHero from "/public/images/ticketHeroImage.png";
 import ticketEvent from "/public/images/ticketEvent.jpg";
 import styles from "./css/ticketPage.module.scss";
 import Modal from "./ticketModal";
+import fetchFromStrapi from "../../utils/fetchFromStrapi";
 
 const Carousel = ({ children, openModal }) => {
   const settings = {
@@ -48,8 +49,8 @@ const Carousel = ({ children, openModal }) => {
     ],
   };
 
-  const handleCardClick = (title, description, imgSrc) => {
-    openModal(title, description, imgSrc);
+  const handleCardClick = (title, description, imgSrc, date) => {
+    openModal(title, description, imgSrc, date);
   };
 
   return (
@@ -63,18 +64,25 @@ const Carousel = ({ children, openModal }) => {
   );
 };
 
-const TicketCard = ({ title, description, imgSrc, handleClick }) => {
+const TicketCard = ({ title, description, imgSrc, date, handleClick }) => {
   return (
     <div className={styles.card}>
-      <Image src={imgSrc} alt={title} className={styles.cardImage} />
+      <Image
+        src={imgSrc}
+        alt={title}
+        className={styles.cardImage}
+        width={300}
+        height={300}
+      />
       <div className={styles.cardContent}>
         <div className={styles.textContainer}>
           <h3 className={styles.cardTitle}>{title}</h3>
           <p className={styles.cardDescription}>{description}</p>
+          <p className={styles.cardDate}>{date}</p>
         </div>
         <button
           className={styles.buyButton}
-          onClick={() => handleClick(title, description, imgSrc)}
+          onClick={() => handleClick(title, description, imgSrc, date)}
         >
           Buy
         </button>
@@ -83,7 +91,26 @@ const TicketCard = ({ title, description, imgSrc, handleClick }) => {
   );
 };
 
-export default function TicketPage() {
+export async function getStaticProps() {
+  const data = await fetchFromStrapi("/api/events?populate=*");
+
+  // Transform the data to match the structure that the TicketCard component is expecting
+  const events = data.map((event) => ({
+    id: event.id,
+    title: event.attributes.Name,
+    description: event.attributes.Description,
+    date: event.attributes.Date,
+    imgSrc: `http://localhost:1337${event.attributes.Image.data.attributes.url}`,
+  }));
+
+  return {
+    props: {
+      events,
+    },
+  };
+}
+
+export default function TicketPage({ events }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [ticketInfo, setTicketInfo] = useState({
     title: "",
@@ -93,9 +120,9 @@ export default function TicketPage() {
   // ...
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const openModal = (title, description, imgSrc) => {
+  const openModal = (title, description, imgSrc, date) => {
     setScrollPosition(window.scrollY);
-    setTicketInfo({ title, description, imgSrc });
+    setTicketInfo({ title, description, imgSrc, date });
     setModalOpen(true);
   };
 
@@ -165,36 +192,15 @@ export default function TicketPage() {
         <div className={`container ${styles.CardsWrapper}`}>
           <div className={` ${styles.ticketCards}`}>
             <Carousel openModal={openModal}>
-              <TicketCard
-                title="Ticket 1"
-                description="Sample description"
-                imgSrc={ticketEvent}
-              />
-              <TicketCard
-                title="Ticket 2"
-                description="Sample description"
-                imgSrc={ticketEvent}
-              />
-              <TicketCard
-                title="Ticket 3"
-                description="Sample description"
-                imgSrc={ticketEvent}
-              />
-              <TicketCard
-                title="Ticket 4"
-                description="Sample description"
-                imgSrc={ticketEvent}
-              />
-              <TicketCard
-                title="Ticket 5"
-                description="Sample description"
-                imgSrc={ticketEvent}
-              />
-              <TicketCard
-                title="Ticket 6"
-                description="Sample description"
-                imgSrc={ticketEvent}
-              />
+              {events.map((event) => (
+                <TicketCard
+                  key={event.id}
+                  title={event.title}
+                  description={event.description}
+                  imgSrc={event.imgSrc}
+                  date={new Date(event.date).toLocaleDateString()}
+                />
+              ))}
             </Carousel>
           </div>
         </div>

@@ -1,0 +1,551 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "Name": "Teamwork Treasure Hunt",
+        "Description": "A thrilling treasure hunt where teams work together to solve riddles and complete challenges to find the hidden treasure. This exciting event promotes problem-solving, communication, and collaboration skills among team members.",
+        "createdAt": "2023-05-08T12:34:22.197Z",
+        "updatedAt": "2023-05-09T07:34:47.826Z",
+        "publishedAt": "2023-05-09T07:34:47.821Z",
+        "Date": "2023-06-10",
+        "Image": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "name": "teambuilding.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 800,
+              "height": 587,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_teambuilding.jpg",
+                  "hash": "thumbnail_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 213,
+                  "height": 156,
+                  "size": 11.34,
+                  "url": "/uploads/thumbnail_teambuilding_edf58c8922.jpg"
+                },
+                "small": {
+                  "name": "small_teambuilding.jpg",
+                  "hash": "small_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 367,
+                  "size": 47.79,
+                  "url": "/uploads/small_teambuilding_edf58c8922.jpg"
+                },
+                "medium": {
+                  "name": "medium_teambuilding.jpg",
+                  "hash": "medium_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 550,
+                  "size": 93.09,
+                  "url": "/uploads/medium_teambuilding_edf58c8922.jpg"
+                }
+              },
+              "hash": "teambuilding_edf58c8922",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 100.7,
+              "url": "/uploads/teambuilding_edf58c8922.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-05-08T12:34:12.146Z",
+              "updatedAt": "2023-05-08T12:34:12.146Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "attributes": {
+        "Name": "PowerPlay Olympics",
+        "Description": "A mini-Olympic-style event where teams compete in various sports and games, fostering healthy competition and camaraderie. This event encourages physical activity, teamwork, and sportsmanship.",
+        "createdAt": "2023-05-08T12:40:27.487Z",
+        "updatedAt": "2023-05-09T07:35:16.229Z",
+        "publishedAt": "2023-05-09T07:35:16.225Z",
+        "Date": "2023-07-15",
+        "Image": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "name": "teambuilding.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 800,
+              "height": 587,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_teambuilding.jpg",
+                  "hash": "thumbnail_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 213,
+                  "height": 156,
+                  "size": 11.34,
+                  "url": "/uploads/thumbnail_teambuilding_edf58c8922.jpg"
+                },
+                "small": {
+                  "name": "small_teambuilding.jpg",
+                  "hash": "small_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 367,
+                  "size": 47.79,
+                  "url": "/uploads/small_teambuilding_edf58c8922.jpg"
+                },
+                "medium": {
+                  "name": "medium_teambuilding.jpg",
+                  "hash": "medium_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 550,
+                  "size": 93.09,
+                  "url": "/uploads/medium_teambuilding_edf58c8922.jpg"
+                }
+              },
+              "hash": "teambuilding_edf58c8922",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 100.7,
+              "url": "/uploads/teambuilding_edf58c8922.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-05-08T12:34:12.146Z",
+              "updatedAt": "2023-05-08T12:34:12.146Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "attributes": {
+        "Name": "Culinary Creations",
+        "Description": "Teams collaborate to create a delicious meal from scratch using provided ingredients, following a set of cooking challenges. This tasty event promotes teamwork, creativity, and communication as participants learn new culinary skills.",
+        "createdAt": "2023-05-08T12:41:52.907Z",
+        "updatedAt": "2023-05-09T07:35:21.608Z",
+        "publishedAt": "2023-05-09T07:35:21.603Z",
+        "Date": "2023-08-20",
+        "Image": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "name": "teambuilding.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 800,
+              "height": 587,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_teambuilding.jpg",
+                  "hash": "thumbnail_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 213,
+                  "height": 156,
+                  "size": 11.34,
+                  "url": "/uploads/thumbnail_teambuilding_edf58c8922.jpg"
+                },
+                "small": {
+                  "name": "small_teambuilding.jpg",
+                  "hash": "small_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 367,
+                  "size": 47.79,
+                  "url": "/uploads/small_teambuilding_edf58c8922.jpg"
+                },
+                "medium": {
+                  "name": "medium_teambuilding.jpg",
+                  "hash": "medium_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 550,
+                  "size": 93.09,
+                  "url": "/uploads/medium_teambuilding_edf58c8922.jpg"
+                }
+              },
+              "hash": "teambuilding_edf58c8922",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 100.7,
+              "url": "/uploads/teambuilding_edf58c8922.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-05-08T12:34:12.146Z",
+              "updatedAt": "2023-05-08T12:34:12.146Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "attributes": {
+        "Name": "Creative Crafters",
+        "Description": "A hands-on, artistic team building event where participants are divided into groups and given materials to create unique art pieces. This event encourages teamwork, creativity, and communication as teams work together to bring their artistic visions to life.",
+        "createdAt": "2023-05-08T12:45:08.274Z",
+        "updatedAt": "2023-05-09T07:34:17.523Z",
+        "publishedAt": "2023-05-09T07:34:17.514Z",
+        "Date": "2023-09-10",
+        "Image": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "name": "teambuilding.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 800,
+              "height": 587,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_teambuilding.jpg",
+                  "hash": "thumbnail_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 213,
+                  "height": 156,
+                  "size": 11.34,
+                  "url": "/uploads/thumbnail_teambuilding_edf58c8922.jpg"
+                },
+                "small": {
+                  "name": "small_teambuilding.jpg",
+                  "hash": "small_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 367,
+                  "size": 47.79,
+                  "url": "/uploads/small_teambuilding_edf58c8922.jpg"
+                },
+                "medium": {
+                  "name": "medium_teambuilding.jpg",
+                  "hash": "medium_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 550,
+                  "size": 93.09,
+                  "url": "/uploads/medium_teambuilding_edf58c8922.jpg"
+                }
+              },
+              "hash": "teambuilding_edf58c8922",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 100.7,
+              "url": "/uploads/teambuilding_edf58c8922.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-05-08T12:34:12.146Z",
+              "updatedAt": "2023-05-08T12:34:12.146Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 5,
+      "attributes": {
+        "Name": "PowerPlay Puzzle Room",
+        "Description": "Teams work together to solve puzzles and unlock the secrets of a themed escape room. This immersive experience encourages critical thinking, communication, and collaboration as participants race against the clock.",
+        "createdAt": "2023-05-08T12:51:08.254Z",
+        "updatedAt": "2023-05-09T07:35:04.429Z",
+        "publishedAt": "2023-05-09T07:35:04.424Z",
+        "Date": "2023-10-05",
+        "Image": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "name": "teambuilding.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 800,
+              "height": 587,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_teambuilding.jpg",
+                  "hash": "thumbnail_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 213,
+                  "height": 156,
+                  "size": 11.34,
+                  "url": "/uploads/thumbnail_teambuilding_edf58c8922.jpg"
+                },
+                "small": {
+                  "name": "small_teambuilding.jpg",
+                  "hash": "small_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 367,
+                  "size": 47.79,
+                  "url": "/uploads/small_teambuilding_edf58c8922.jpg"
+                },
+                "medium": {
+                  "name": "medium_teambuilding.jpg",
+                  "hash": "medium_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 550,
+                  "size": 93.09,
+                  "url": "/uploads/medium_teambuilding_edf58c8922.jpg"
+                }
+              },
+              "hash": "teambuilding_edf58c8922",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 100.7,
+              "url": "/uploads/teambuilding_edf58c8922.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-05-08T12:34:12.146Z",
+              "updatedAt": "2023-05-08T12:34:12.146Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 6,
+      "attributes": {
+        "Name": "Charity Team Challenge",
+        "Description": "Teams work together to complete various tasks that benefit a local charity or community organization. This heartwarming event promotes teamwork, altruism, and a sense of community as participants make a positive impact on the lives of others.",
+        "createdAt": "2023-05-08T12:52:28.203Z",
+        "updatedAt": "2023-05-09T07:34:10.302Z",
+        "publishedAt": "2023-05-09T07:34:10.291Z",
+        "Date": "2023-11-12",
+        "Image": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "name": "teambuilding.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 800,
+              "height": 587,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_teambuilding.jpg",
+                  "hash": "thumbnail_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 213,
+                  "height": 156,
+                  "size": 11.34,
+                  "url": "/uploads/thumbnail_teambuilding_edf58c8922.jpg"
+                },
+                "small": {
+                  "name": "small_teambuilding.jpg",
+                  "hash": "small_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 367,
+                  "size": 47.79,
+                  "url": "/uploads/small_teambuilding_edf58c8922.jpg"
+                },
+                "medium": {
+                  "name": "medium_teambuilding.jpg",
+                  "hash": "medium_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 550,
+                  "size": 93.09,
+                  "url": "/uploads/medium_teambuilding_edf58c8922.jpg"
+                }
+              },
+              "hash": "teambuilding_edf58c8922",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 100.7,
+              "url": "/uploads/teambuilding_edf58c8922.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-05-08T12:34:12.146Z",
+              "updatedAt": "2023-05-08T12:34:12.146Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 7,
+      "attributes": {
+        "Name": "PowerPlay Quiz Night",
+        "Description": "A fun and engaging trivia night where teams compete to answer questions on a variety of topics. This event encourages teamwork, communication, and friendly competition as participants put their knowledge to the test.",
+        "createdAt": "2023-05-08T12:53:16.036Z",
+        "updatedAt": "2023-05-09T07:34:56.999Z",
+        "publishedAt": "2023-05-09T07:34:56.990Z",
+        "Date": "2023-12-01",
+        "Image": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "name": "teambuilding.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 800,
+              "height": 587,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_teambuilding.jpg",
+                  "hash": "thumbnail_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 213,
+                  "height": 156,
+                  "size": 11.34,
+                  "url": "/uploads/thumbnail_teambuilding_edf58c8922.jpg"
+                },
+                "small": {
+                  "name": "small_teambuilding.jpg",
+                  "hash": "small_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 367,
+                  "size": 47.79,
+                  "url": "/uploads/small_teambuilding_edf58c8922.jpg"
+                },
+                "medium": {
+                  "name": "medium_teambuilding.jpg",
+                  "hash": "medium_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 550,
+                  "size": 93.09,
+                  "url": "/uploads/medium_teambuilding_edf58c8922.jpg"
+                }
+              },
+              "hash": "teambuilding_edf58c8922",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 100.7,
+              "url": "/uploads/teambuilding_edf58c8922.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-05-08T12:34:12.146Z",
+              "updatedAt": "2023-05-08T12:34:12.146Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 8,
+      "attributes": {
+        "Name": "Build-a-Boat Challenge",
+        "Description": "Teams design and build a functional boat using provided materials, then race their creations in a friendly competition. This hands-on event promotes teamwork, creativity, and problem-solving as participants work together to conquer the challenge.",
+        "createdAt": "2023-05-08T12:54:12.599Z",
+        "updatedAt": "2023-05-09T07:34:02.240Z",
+        "publishedAt": "2023-05-09T07:34:02.231Z",
+        "Date": "2024-01-01",
+        "Image": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "name": "teambuilding.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 800,
+              "height": 587,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_teambuilding.jpg",
+                  "hash": "thumbnail_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 213,
+                  "height": 156,
+                  "size": 11.34,
+                  "url": "/uploads/thumbnail_teambuilding_edf58c8922.jpg"
+                },
+                "small": {
+                  "name": "small_teambuilding.jpg",
+                  "hash": "small_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 367,
+                  "size": 47.79,
+                  "url": "/uploads/small_teambuilding_edf58c8922.jpg"
+                },
+                "medium": {
+                  "name": "medium_teambuilding.jpg",
+                  "hash": "medium_teambuilding_edf58c8922",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 550,
+                  "size": 93.09,
+                  "url": "/uploads/medium_teambuilding_edf58c8922.jpg"
+                }
+              },
+              "hash": "teambuilding_edf58c8922",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 100.7,
+              "url": "/uploads/teambuilding_edf58c8922.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-05-08T12:34:12.146Z",
+              "updatedAt": "2023-05-08T12:34:12.146Z"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": { "page": 1, "pageSize": 25, "pageCount": 1, "total": 8 }
+  }
+}

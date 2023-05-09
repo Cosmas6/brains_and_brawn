@@ -6,6 +6,7 @@ export default function TicketSale({
   ticketName,
   ticketDescription,
   imgSrc,
+  date,
   onNextStep,
   earlyBirdQuantity,
   setEarlyBirdQuantity,
@@ -40,7 +41,7 @@ export default function TicketSale({
           <div className="col-lg-6">
             <div className={styles.date}>
               <div className={styles.month}>Apr</div>
-              <div className={styles.day}>29</div>
+              <div className={styles.day}>{date}</div>
             </div>
 
             <div className={styles.text}>
