@@ -165,7 +165,6 @@
   margin-bottom: 20px;
 }
 
-
 .arrowNavigation {
   display: flex;
   align-items: center;
@@ -195,6 +194,8 @@
   overflow: hidden;
   width: 350px;
   min-width: 320px;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardImage {
@@ -205,13 +206,9 @@
 }
 
 .cardContent {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 330px;
+  width: 100%;
   margin: 10px 10px;
   background-color: #fff;
-  border-radius: 20px;
   padding: 1rem;
   display: flex;
   justify-content: space-between;

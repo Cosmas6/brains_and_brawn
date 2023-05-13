@@ -25,6 +25,8 @@ export default function TicketSale({
     setter(quantity - 1 >= 0 ? quantity - 1 : 0);
   };
 
+  console.log(date);
+
   const earlyBirdTotal = earlyBirdQuantity * 1000;
   const gateTotal = gateQuantity * 2000;
   const grandTotal = earlyBirdTotal + gateTotal;
@@ -35,7 +37,7 @@ export default function TicketSale({
         <div className={`row ${styles.modalContent}`}>
           <div className="col-lg-6">
             <div className={styles.imageContainer}>
-              <Image src={imgSrc} alt={ticketName} width={500} height={200} />
+              <img src={imgSrc} alt={ticketName} />
             </div>
           </div>
           <div className="col-lg-6">

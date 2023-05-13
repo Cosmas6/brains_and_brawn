@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import styles from "../styles/EventCarousel.module.scss";
 import carouselImage from "/public/images/aboutImage.jpg";
+import fetchFromStrapi from "../utils/fetchFromStrapi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -39,12 +40,35 @@ const Carousel = ({ children }) => {
 const ImageCard = ({ title, imgSrc }) => {
   return (
     <div className={styles.imageContainer}>
-      <Image src={imgSrc} alt={title} className={styles.img} />
+      <img
+        src={imgSrc}
+        alt={title}
+        className={styles.img}
+    
+      />
     </div>
   );
 };
 
 export default function EventCarousel() {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const data = await fetchFromStrapi("/api/event-galleries?populate=*");
+      const finalData = data.data;
+
+      const transformedEvents = finalData.map((event) => ({
+        id: event.id,
+        imgSrc: `http://localhost:1337${event.attributes.Images.data[0].attributes.url}`,
+      }));
+
+      setEvents(transformedEvents);
+    };
+
+    fetchEvents();
+  }, []);
+
   return (
     <div className={styles.eventCarouselContainer} id="eventCarousel">
       <div className={styles.carouselText}>
@@ -58,9 +82,13 @@ export default function EventCarousel() {
 
       <div className={styles.carouselContainer}>
         <Carousel>
-          <ImageCard imgSrc={carouselImage} title="Image 1" />
-          <ImageCard imgSrc={carouselImage} title="Image 2" />
-          <ImageCard imgSrc={carouselImage} title="Image 3" />
+          {events.map((event, index) => (
+            <ImageCard
+              key={index}
+              imgSrc={event.imgSrc}
+              title={`Image ${index + 1}`}
+            />
+          ))}
         </Carousel>
       </div>
     </div>

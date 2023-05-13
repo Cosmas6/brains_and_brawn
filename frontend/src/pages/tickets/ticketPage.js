@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import ticketHero from "/public/images/ticketHeroImage.png";
@@ -65,20 +65,39 @@ const Carousel = ({ children, openModal }) => {
 };
 
 const TicketCard = ({ title, description, imgSrc, date, handleClick }) => {
+  const shortenDescription = (text, maxLength = 50) => {
+    if (!text) return "";
+    if (text.length <= maxLength) return text;
+
+    return text.slice(0, maxLength) + "...";
+  };
+
+  const dateObject = new Date(date);
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
+    dateObject
+  );
+
+  const imgSrcString = `  ${imgSrc}`;
+
+  console.log(imgSrcString, "imgSrc");
+
   return (
     <div className={styles.card}>
-      <Image
-        src={imgSrc}
+      <img
+        src={imgSrcString}
         alt={title}
         className={styles.cardImage}
-        width={300}
-        height={300}
+        // width={400}
+        // height={400}
       />
       <div className={styles.cardContent}>
         <div className={styles.textContainer}>
           <h3 className={styles.cardTitle}>{title}</h3>
-          <p className={styles.cardDescription}>{description}</p>
-          <p className={styles.cardDate}>{date}</p>
+          <p className={styles.cardDescription}>
+            {shortenDescription(description)}
+          </p>
+          <p className={styles.cardDate}>{formattedDate}</p>
         </div>
         <button
           className={styles.buyButton}
@@ -91,26 +110,28 @@ const TicketCard = ({ title, description, imgSrc, date, handleClick }) => {
   );
 };
 
-export async function getStaticProps() {
-  const data = await fetchFromStrapi("/api/events?populate=*");
+// export async function getStaticProps() {
+//   const data = await fetchFromStrapi("/api/events?populate=*");
 
-  // Transform the data to match the structure that the TicketCard component is expecting
-  const events = data.map((event) => ({
-    id: event.id,
-    title: event.attributes.Name,
-    description: event.attributes.Description,
-    date: event.attributes.Date,
-    imgSrc: `http://localhost:1337${event.attributes.Image.data.attributes.url}`,
-  }));
+//   // Transform the data to match the structure that the TicketCard component is expecting
+//   const events = data.map((event) => ({
+//     id: event.id,
+//     title: event.attributes.Name,
+//     description: event.attributes.Description,
+//     date: event.attributes.Date,
+//     imgSrc: `http://localhost:3001${event.attributes.Image.data.attributes.url}`,
+//   }));
 
-  return {
-    props: {
-      events,
-    },
-  };
-}
+//   return {
+//     props: {
+//       events,
+//     },
+//     revalidate: 10,
+//   };
+// }
 
-export default function TicketPage({ events }) {
+export default function TicketPage() {
+  const [events, setEvents] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [ticketInfo, setTicketInfo] = useState({
     title: "",
@@ -119,6 +140,26 @@ export default function TicketPage({ events }) {
   });
   // ...
   const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchFromStrapi("/api/events?populate=*");
+      const finalData = data.data;
+
+      // Transform the data
+      const transformedEvents = finalData.map((event) => ({
+        id: event.id,
+        title: event.attributes.Name,
+        description: event.attributes.Description,
+        date: event.attributes.Date,
+        imgSrc: `http://localhost:1337${event.attributes.Image.data.attributes.url}`,
+      }));
+
+      setEvents(transformedEvents);
+    };
+
+    fetchData();
+  }, []);
 
   const openModal = (title, description, imgSrc, date) => {
     setScrollPosition(window.scrollY);
