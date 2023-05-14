@@ -5,7 +5,7 @@ import PaymentPrompt from "./paymentPrompt";
 
 export default function Modal({ closeModal, ticketInfo = {}, scrollPosition }) {
   const [step, setStep] = useState(1);
-  const { title = "", description = "", imgSrc = "" } = ticketInfo;
+  const { title = "", description = "", imgSrc = "", date = "" } = ticketInfo;
   const [earlyBirdQuantity, setEarlyBirdQuantity] = useState(0);
   const [gateQuantity, setGateQuantity] = useState(0);
   const [grandTotal, setGrandTotal] = useState(0);
@@ -37,6 +37,7 @@ export default function Modal({ closeModal, ticketInfo = {}, scrollPosition }) {
               ticketName={title}
               ticketDescription={description}
               imgSrc={imgSrc}
+              date={date}
               onNextStep={handleNextStep}
               earlyBirdQuantity={earlyBirdQuantity}
               setEarlyBirdQuantity={setEarlyBirdQuantity}

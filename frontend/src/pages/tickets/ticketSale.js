@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./css/ticketSale.module.scss";
 
@@ -25,11 +25,17 @@ export default function TicketSale({
     setter(quantity - 1 >= 0 ? quantity - 1 : 0);
   };
 
-  console.log(date);
+  const [formattedDate, setFormattedDate] = useState("");
 
   const earlyBirdTotal = earlyBirdQuantity * 1000;
   const gateTotal = gateQuantity * 2000;
   const grandTotal = earlyBirdTotal + gateTotal;
+
+  useEffect(() => {
+    let newDate = new Date(date);
+    let options = { year: "numeric", month: "long", day: "numeric" };
+    setFormattedDate(newDate.toLocaleDateString("en-US", options));
+  }, [date]);
 
   return (
     <div className={styles.ticketSaleContainer}>
@@ -42,8 +48,7 @@ export default function TicketSale({
           </div>
           <div className="col-lg-6">
             <div className={styles.date}>
-              <div className={styles.month}>Apr</div>
-              <div className={styles.day}>{date}</div>
+              <h3 className={styles.date}>{formattedDate}</h3>
             </div>
 
             <div className={styles.text}>

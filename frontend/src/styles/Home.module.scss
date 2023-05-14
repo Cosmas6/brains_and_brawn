@@ -64,6 +64,9 @@
   padding: 10px;
   @include montserrat-medium;
   color: #ffffff;
+  word-wrap: break-word;
+  white-space: normal;
+  margin: 0 auto;
 }
 
 .countdownTimer {
@@ -238,8 +241,11 @@
     text-align: center;
     font-size: 1.5rem;
     padding: 10px;
+    width: 300px;
     @include montserrat-medium;
     color: #ffffff;
+    word-wrap: break-word;
+    white-space: normal;
   }
 
   .countdownTimer {

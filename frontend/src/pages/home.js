@@ -7,12 +7,15 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import { motion } from "framer-motion";
 import logoImage from "/public/images/PowerPlayLogo.png";
 import Layout from "../components/Layout";
+import fetchFromStrapi from "../utils/fetchFromStrapi";
 
 export default function Home() {
   const countdownTimerRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [screenSize, setScreenSize] = useState(1);
-  console.log(screenSize);
+  const [event, setEvent] = useState(null);
+
+  console.log(event);
   const router = useRouter();
 
   const fadeInUp = {
@@ -53,6 +56,26 @@ export default function Home() {
     const handleRouteChangeComplete = () => {
       setIsLoading(false);
     };
+    const fetchData = async () => {
+      try {
+        const data = await fetchFromStrapi("/api/events");
+        const finalData = data.data;
+        console.log(finalData);
+
+        // Transform the data
+        const transformedEvents = {
+          id: finalData[0].id,
+          title: finalData[0].attributes.Name,
+          date: finalData[0].attributes.Date,
+        };
+
+        setEvent(transformedEvents);
+      } catch (error) {
+        console.error("Error fetching event data:", error);
+      }
+    };
+
+    fetchData();
 
     router.events.on("routeChangeComplete", handleRouteChangeComplete);
 
@@ -126,7 +149,7 @@ export default function Home() {
   }
 
   function updateCountdown() {
-    const eventDate = new Date("2023-05-30 23:59:59"); // replace with your event date
+    const eventDate = new Date(event.date); // replace with your event date
     const currentDate = new Date();
     const difference = eventDate.getTime() - currentDate.getTime();
     const totalDays = Math.ceil(difference / (1000 * 60 * 60 * 24));
@@ -208,7 +231,7 @@ export default function Home() {
           {/* <h2 className={styles.subHeading}>
           Building Stronger Bonds and Boosting Productivity
         </h2> */}
-          <h2 className={styles.eventName}>[Latest Event Name:]</h2>
+          <h2 className={styles.eventName}>{event && event.title}</h2>
           <motion.div
             id="countdown-timer"
             ref={countdownTimerRef}
